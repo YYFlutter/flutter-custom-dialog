@@ -1,6 +1,7 @@
 library flutter_custom_dialog;
+
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/flutter_custom_dialog.dart' show YYDialog;
+import 'package:flutter_custom_dialog/components/dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,26 +21,38 @@ class AppHome extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            RaisedButton(
-              onPressed: () {
-                YYDialog(context: context ).build()
-                  ..widget(
-                    Row(
-                      children: <Widget>[Text('haha'), Text('bbb')],
-                    ),
-                  )
-                  ..widget(
-                    Row(
-                      children: <Widget>[Text('haha'), Text('bbb')],
-                    ),
-                  )
-                  ..show();
-              },
-              child: Text('click'),
-            )
+            showAlertDialog(context),
           ],
         ),
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text("YYAlertDialog:"),
+      Row(
+        children: <Widget>[
+          makeTextButton("1", () {
+            YYAlertDialog(context);
+          }),
+          makeTextButton("2", () {
+            YYAlertDialog(context);
+          }),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget makeTextButton(title, Function() function) {
+  return RaisedButton(
+    onPressed: () {
+      function();
+    },
+    child: Text(title),
+  );
 }
