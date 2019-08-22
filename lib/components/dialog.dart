@@ -7,6 +7,8 @@ YYDialog YYAlertDialog(BuildContext context) {
     ..decoration = BoxDecoration(
       color: Colors.red,
     )
+    ..constraints = null
+    ..mainAxisAlignment = MainAxisAlignment.end
     ..widget(
       Row(
         children: <Widget>[Text('haha'), Text('bbb')],
