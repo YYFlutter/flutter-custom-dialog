@@ -4,11 +4,14 @@ class YYDialog {
   List<Widget> widgetList = [];
   BuildContext context;
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.center;
+  double width;
+  double height;
+  BoxDecoration decoration;
+  BoxConstraints constraints;
 
-  YYDialog({this.context, MainAxisAlignment mainAxisAlignment}) {
-    if (mainAxisAlignment != null) {
-      this.mainAxisAlignment = mainAxisAlignment;
-    }
+  YYDialog({this.context}) {
+//    this.width = MediaQuery.of(context).size.width * .8;
+//    this.height = MediaQuery.of(context).size.height * .3;
   }
 
   YYDialog build() {
@@ -18,14 +21,28 @@ class YYDialog {
 
   next() {
     print('next');
+    Size size = MediaQuery.of(context).size;
     CustomDialog(
       context: context,
       child: Column(
         mainAxisAlignment: mainAxisAlignment,
         children: <Widget>[
           Material(
-            child: Column(
-              children: widgetList,
+            type: MaterialType.transparency,
+            child: Container(
+              decoration: decoration ?? BoxDecoration(
+                color: Colors.white,
+              ),
+              // 限制container大小
+              constraints: constraints ?? BoxConstraints(
+//                minHeight: size.height * .3,
+//                minWidth: size.width * .8,
+//                maxHeight: size.height * .5,
+                maxWidth: size.width * .8,
+              ),
+              child: Column(
+                children: widgetList,
+              ),
             ),
           )
         ],

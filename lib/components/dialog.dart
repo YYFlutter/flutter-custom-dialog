@@ -4,6 +4,9 @@ import '../flutter_custom_dialog.dart';
 
 YYDialog YYAlertDialog(BuildContext context) {
   return YYDialog(context: context).build()
+    ..decoration = BoxDecoration(
+      color: Colors.red,
+    )
     ..widget(
       Row(
         children: <Widget>[Text('haha'), Text('bbb')],
