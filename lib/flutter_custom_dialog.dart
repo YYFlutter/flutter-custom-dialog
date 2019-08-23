@@ -9,18 +9,17 @@ class YYDialog {
   BoxDecoration decoration;
   BoxConstraints constraints;
 
-  YYDialog({this.context}) {
-//    this.width = MediaQuery.of(context).size.width * .8;
-//    this.height = MediaQuery.of(context).size.height * .3;
-  }
-
-  YYDialog build() {
-    print('build');
+  YYDialog build(context) {
+    this.context = context;
     return this;
   }
 
-  next() {
-    print('next');
+  YYDialog widget(Widget child) {
+    this.widgetList.add(child);
+    return this;
+  }
+
+  void show() {
     Size size = MediaQuery.of(context).size;
     CustomDialog(
       context: context,
@@ -30,16 +29,17 @@ class YYDialog {
           Material(
             type: MaterialType.transparency,
             child: Container(
-              decoration: decoration ?? BoxDecoration(
-                color: Colors.white,
-              ),
-              // 限制container大小
-              constraints: constraints ?? BoxConstraints(
-//                minHeight: size.height * .3,
-//                minWidth: size.width * .8,
-//                maxHeight: size.height * .5,
-                maxWidth: size.width * .8,
-              ),
+              width: width,
+              height: height,
+              decoration: decoration ??
+                  BoxDecoration(
+                    color: Colors.white,
+                  ),
+              constraints: constraints ??
+                  BoxConstraints(
+                    minHeight: size.height * .01,
+                    minWidth: size.width * .01,
+                  ),
               child: Column(
                 children: widgetList,
               ),
@@ -48,16 +48,6 @@ class YYDialog {
         ],
       ),
     );
-  }
-
-  show() {
-    print('show');
-    this.next();
-  }
-
-  YYDialog widget(Widget child) {
-    this.widgetList.add(child);
-    return this;
   }
 }
 
