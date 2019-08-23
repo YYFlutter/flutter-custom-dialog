@@ -4,21 +4,23 @@ import '../flutter_custom_dialog.dart';
 
 YYDialog YYAlertDialog(BuildContext context) {
   return YYDialog().build(context)
-    ..decoration = BoxDecoration(
-      color: Colors.red,
+    ..width = 240
+    ..text(
+      padding: EdgeInsets.all(16.0),
+      text: "Dialog Header",
+      color: Colors.black,
+      fontSize: 16.0,
     )
-    ..mainAxisAlignment = MainAxisAlignment.center
-    ..width = 200
-    ..height = 100
-    ..widget(
-      Row(
-        children: <Widget>[Text('haha'), Text('bbb')],
-      ),
+    ..text(
+      padding: EdgeInsets.only(left: 16.0),
+      text: "Dialog body text",
+      color: Colors.grey[500],
     )
-    ..widget(
-      Row(
-        children: <Widget>[Text('haha'), Text('bbb')],
-      ),
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 12.0),
+      text: "ACTION 1",
+      color: Colors.deepPurpleAccent,
+      fontSize: 14.0,
     )
     ..show();
 }

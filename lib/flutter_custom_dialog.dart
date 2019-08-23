@@ -19,26 +19,78 @@ class YYDialog {
     return this;
   }
 
+  YYDialog text({padding, text, color, fontSize, alignment}) {
+    return this.widget(
+      Padding(
+        padding: padding ?? EdgeInsets.all(0.0),
+        child: Align(
+          alignment: alignment ?? Alignment.centerLeft,
+          child: Text(
+            text ?? "",
+            style: TextStyle(
+              color: color ?? Colors.black,
+              fontSize: fontSize ?? 14.0,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  YYDialog doubleButton({padding, text, color, fontSize}) {
+    return this.widget(
+      Padding(
+        padding: padding ?? EdgeInsets.all(0.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            FlatButton(
+              onPressed: () {},
+              child: Text(
+                text ?? "",
+                style: TextStyle(
+                  color: color ?? Colors.black,
+                  fontSize: fontSize ?? 14.0,
+                ),
+              ),
+            ),
+            FlatButton(
+              onPressed: () {},
+              child: Text(
+                text ?? "",
+                style: TextStyle(
+                  color: color ?? Colors.black,
+                  fontSize: fontSize ?? 14.0,
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   void show() {
     Size size = MediaQuery.of(context).size;
     CustomDialog(
       context: context,
       child: Column(
+        textDirection: TextDirection.ltr,
         mainAxisAlignment: mainAxisAlignment,
         children: <Widget>[
           Material(
             type: MaterialType.transparency,
             child: Container(
-              width: width,
-              height: height,
+              width: width ?? null,
+              height: height ?? null,
               decoration: decoration ??
                   BoxDecoration(
                     color: Colors.white,
                   ),
               constraints: constraints ??
                   BoxConstraints(
-                    minHeight: size.height * .01,
-                    minWidth: size.width * .01,
+                    minHeight: size.height * .1,
+                    minWidth: size.width * .1,
                   ),
               child: Column(
                 children: widgetList,
