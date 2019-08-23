@@ -6,7 +6,8 @@ class YYDialog {
   MainAxisAlignment mainAxisAlignment = MainAxisAlignment.center;
   double width;
   double height;
-  BoxDecoration decoration;
+  Color backgroundColor = Colors.white;
+  double borderRadius = 0.0;
   BoxConstraints constraints;
 
   YYDialog build(context) {
@@ -37,30 +38,45 @@ class YYDialog {
     );
   }
 
-  YYDialog doubleButton({padding, text, color, fontSize}) {
+  YYDialog doubleButton({
+    padding,
+    mainAxisAlignment,
+    text1,
+    color1,
+    fontSize1,
+    fontWeight1,
+    text2,
+    color2,
+    fontSize2,
+    fontWeight2,
+  }) {
     return this.widget(
       Padding(
         padding: padding ?? EdgeInsets.all(0.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: mainAxisAlignment,
           children: <Widget>[
             FlatButton(
               onPressed: () {},
+              padding: EdgeInsets.all(0.0),
               child: Text(
-                text ?? "",
+                text1 ?? "",
                 style: TextStyle(
-                  color: color ?? Colors.black,
-                  fontSize: fontSize ?? 14.0,
+                  color: color1 ?? null,
+                  fontSize: fontSize1 ?? null,
+                  fontWeight: fontWeight1 ?? null,
                 ),
               ),
             ),
             FlatButton(
               onPressed: () {},
+              padding: EdgeInsets.all(0.0),
               child: Text(
-                text ?? "",
+                text2 ?? "",
                 style: TextStyle(
-                  color: color ?? Colors.black,
-                  fontSize: fontSize ?? 14.0,
+                  color: color2 ?? Colors.black,
+                  fontSize: fontSize2 ?? 14.0,
+                  fontWeight: fontWeight2 ?? null,
                 ),
               ),
             )
@@ -83,10 +99,10 @@ class YYDialog {
             child: Container(
               width: width ?? null,
               height: height ?? null,
-              decoration: decoration ??
-                  BoxDecoration(
-                    color: Colors.white,
-                  ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(borderRadius),
+                color: backgroundColor,
+              ),
               constraints: constraints ??
                   BoxConstraints(
                     minHeight: size.height * .1,

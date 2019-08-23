@@ -37,10 +37,10 @@ showAlertDialog(BuildContext context) {
       Row(
         children: <Widget>[
           makeTextButton("1", () {
-            YYAlertDialog(context);
+            YYAlertDialog1(context);
           }),
           makeTextButton("2", () {
-            YYAlertDialog(context);
+            YYAlertDialog2(context);
           }),
         ],
       ),
