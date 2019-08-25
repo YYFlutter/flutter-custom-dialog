@@ -22,6 +22,7 @@ class AppHome extends StatelessWidget {
         child: Column(
           children: <Widget>[
             showAlertDialog(context),
+            showListTileDialog(context),
           ],
         ),
       ),
@@ -41,6 +42,22 @@ showAlertDialog(BuildContext context) {
           }),
           makeTextButton("2", () {
             YYAlertDialog2(context);
+          }),
+        ],
+      ),
+    ],
+  );
+}
+
+showListTileDialog(BuildContext context) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text("YYListTileDialog:"),
+      Row(
+        children: <Widget>[
+          makeTextButton("1", () {
+            YYListTileDialog1(context);
           }),
         ],
       ),

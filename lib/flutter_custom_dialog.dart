@@ -86,6 +86,28 @@ class YYDialog {
     );
   }
 
+  YYDialog listTile({
+    padding,
+    leading,
+    text,
+    color,
+    fontSize,
+    fontWeight,
+  }) {
+    return this.widget(ListTile(
+      contentPadding: padding,
+      leading: leading,
+      title: Text(
+        text ?? "",
+        style: TextStyle(
+          color: color ?? null,
+          fontSize: fontSize ?? null,
+          fontWeight: fontWeight ?? null,
+        ),
+      ),
+    ));
+  }
+
   void show() {
     Size size = MediaQuery.of(context).size;
     CustomDialog(
