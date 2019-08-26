@@ -107,3 +107,29 @@ YYDialog YYListTileDialog1(BuildContext context) {
     )
     ..show();
 }
+
+YYDialog YYListViewDialog1(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 280
+    ..borderRadius = 4.0
+    ..text(
+      padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 12.0),
+      text: "Phone ringtone",
+      color: Colors.black,
+      fontSize: 18.0,
+    )
+    ..divider()
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 10.0),
+      mainAxisAlignment: MainAxisAlignment.end,
+      text1: "CANCEL",
+      color1: Colors.deepPurpleAccent,
+      fontSize1: 14.0,
+      fontWeight1: FontWeight.bold,
+      text2: "OK",
+      color2: Colors.deepPurpleAccent,
+      fontSize2: 14.0,
+      fontWeight2: FontWeight.bold,
+    )
+    ..show();
+}

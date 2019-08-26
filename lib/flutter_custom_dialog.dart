@@ -118,6 +118,15 @@ class YYDialog {
     );
   }
 
+  YYDialog divider({color, height}) {
+    return this.widget(
+      Divider(
+        color: color ?? Colors.grey[300],
+        height: height ?? 0.1,
+      ),
+    );
+  }
+
   void show() {
     Size size = MediaQuery.of(context).size;
     CustomDialog(
