@@ -93,19 +93,29 @@ class YYDialog {
     color,
     fontSize,
     fontWeight,
+    GestureTapCallback onTap,
   }) {
-    return this.widget(ListTile(
-      contentPadding: padding,
-      leading: leading,
-      title: Text(
-        text ?? "",
-        style: TextStyle(
-          color: color ?? null,
-          fontSize: fontSize ?? null,
-          fontWeight: fontWeight ?? null,
+    return this.widget(
+      Material(
+        borderRadius: BorderRadius.circular(borderRadius),
+        color: Colors.white,
+        child: InkWell(
+          onTap: onTap,
+          child: ListTile(
+            contentPadding: padding,
+            leading: leading,
+            title: Text(
+              text ?? "",
+              style: TextStyle(
+                color: color ?? null,
+                fontSize: fontSize ?? null,
+                fontWeight: fontWeight ?? null,
+              ),
+            ),
+          ),
         ),
       ),
-    ));
+    );
   }
 
   void show() {

@@ -59,13 +59,13 @@ YYDialog YYListTileDialog1(BuildContext context) {
     ..width = 280
     ..borderRadius = 4.0
     ..text(
-      padding: EdgeInsets.all(18.0),
+      padding: EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 12.0),
       text: "Set backup account",
       color: Colors.black,
       fontSize: 18.0,
     )
     ..listTile(
-      padding: EdgeInsets.only(bottom: 12.0, left: 16.0, right: 16.0),
+      padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
       leading: ClipOval(
         child: Image.network(
           "https://imgavater.ui.cn/avatar/3/3/4/9/1269433.jpg?imageMogr2/auto-orient/crop/!1219x1219a12a0/thumbnail/148x148",
@@ -79,7 +79,7 @@ YYDialog YYListTileDialog1(BuildContext context) {
       fontSize: 16.0,
     )
     ..listTile(
-      padding: EdgeInsets.only(bottom: 12.0, left: 16.0, right: 16.0),
+      padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
       leading: ClipOval(
         child: Image.network(
           "https://imgavater.ui.cn/avatar/1/4/7/8/958741.jpg?imageMogr2/auto-orient/crop/!563x563a377a167/thumbnail/60x60",
@@ -93,7 +93,7 @@ YYDialog YYListTileDialog1(BuildContext context) {
       fontSize: 16.0,
     )
     ..listTile(
-      padding: EdgeInsets.only(bottom: 12.0, left: 16.0, right: 16.0),
+      padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
       leading: ClipOval(
           child: Container(
         width: 50,
