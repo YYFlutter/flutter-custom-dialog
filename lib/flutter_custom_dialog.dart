@@ -20,7 +20,7 @@ class YYDialog {
     return this;
   }
 
-  YYDialog text({padding, text, color, fontSize, alignment}) {
+  YYDialog text({padding, text, color, fontSize, alignment, fontWeight}) {
     return this.widget(
       Padding(
         padding: padding ?? EdgeInsets.all(0.0),
@@ -31,6 +31,7 @@ class YYDialog {
             style: TextStyle(
               color: color ?? Colors.black,
               fontSize: fontSize ?? 14.0,
+              fontWeight: fontWeight,
             ),
           ),
         ),

@@ -44,6 +44,9 @@ showAlertDialog(BuildContext context) {
           makeTextButton("2", () {
             YYAlertDialog2(context);
           }),
+          makeTextButton("3", () {
+            YYAlertDialog3(context);
+          }),
         ],
       ),
     ],
