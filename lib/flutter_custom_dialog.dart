@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/dialog_item.dart';
+import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 
 class YYDialog {
   List<Widget> widgetList = [];

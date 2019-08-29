@@ -1,7 +1,8 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/dialog.dart';
+import 'package:flutter_custom_dialog/components/alert_dialog.dart';
+import 'package:flutter_custom_dialog/components/listview_dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +23,6 @@ class AppHome extends StatelessWidget {
         child: Column(
           children: <Widget>[
             showAlertDialog(context),
-            showListTileDialog(context),
             showListViewDialog(context),
           ],
         ),
@@ -53,22 +53,6 @@ showAlertDialog(BuildContext context) {
   );
 }
 
-showListTileDialog(BuildContext context) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text("YYListTileDialog:"),
-      Row(
-        children: <Widget>[
-          makeTextButton("1", () {
-            YYListTileDialog1(context);
-          }),
-        ],
-      ),
-    ],
-  );
-}
-
 showListViewDialog(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,6 +62,9 @@ showListViewDialog(BuildContext context) {
         children: <Widget>[
           makeTextButton("1", () {
             YYListViewDialog1(context);
+          }),
+          makeTextButton("2", () {
+            YYListViewDialog2(context);
           }),
         ],
       ),
