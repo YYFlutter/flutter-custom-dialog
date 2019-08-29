@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/dialog_item.dart';
+
 class YYDialog {
   List<Widget> widgetList = [];
   BuildContext context;
@@ -87,33 +89,33 @@ class YYDialog {
     );
   }
 
-  YYDialog listTile({
-    padding,
-    leading,
-    text,
-    color,
-    fontSize,
-    fontWeight,
-    GestureTapCallback onTap,
-  }) {
+  YYDialog listViewOfListTile({List<ListTileItem> items}) {
     return this.widget(
       Material(
-        borderRadius: BorderRadius.circular(borderRadius),
-        color: Colors.white,
-        child: InkWell(
-          onTap: onTap,
-          child: ListTile(
-            contentPadding: padding,
-            leading: leading,
-            title: Text(
-              text ?? "",
-              style: TextStyle(
-                color: color ?? null,
-                fontSize: fontSize ?? null,
-                fontWeight: fontWeight ?? null,
+        child: ListView.builder(
+          padding: EdgeInsets.all(0.0),
+          shrinkWrap: true,
+          itemCount: items.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Material(
+              color: Colors.white,
+              child: InkWell(
+                onTap: items[index].onTap,
+                child: ListTile(
+                  contentPadding: items[index].padding,
+                  leading: items[index].leading,
+                  title: Text(
+                    items[index].text ?? "",
+                    style: TextStyle(
+                      color: items[index].color ?? null,
+                      fontSize: items[index].fontSize ?? null,
+                      fontWeight: items[index].fontWeight ?? null,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
+            );
+          },
         ),
       ),
     );
@@ -139,6 +141,7 @@ class YYDialog {
           Material(
             type: MaterialType.transparency,
             child: Container(
+              padding: EdgeInsets.all(borderRadius / 3.14),
               width: width ?? null,
               height: height ?? null,
               decoration: BoxDecoration(
