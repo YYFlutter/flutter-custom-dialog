@@ -49,6 +49,22 @@ showAlertDialog(BuildContext context) {
           }),
         ],
       ),
+      Row(
+        children: <Widget>[
+          makeTextButton("bottom", () {
+            YYAlertDialog4(context);
+          }),
+          makeTextButton("top", () {
+            YYAlertDialog5(context);
+          }),
+          makeTextButton("left", () {
+            YYAlertDialog6(context);
+          }),
+          makeTextButton("right", () {
+            YYAlertDialog7(context);
+          }),
+        ],
+      ),
     ],
   );
 }

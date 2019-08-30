@@ -8,7 +8,6 @@ class ListTileItem {
     this.color,
     this.fontSize,
     this.fontWeight,
-    this.onTap,
   });
 
   EdgeInsets padding;
@@ -17,7 +16,6 @@ class ListTileItem {
   Color color;
   double fontSize;
   FontWeight fontWeight;
-  GestureTapCallback onTap;
 }
 
 class RadioItem {
@@ -35,5 +33,5 @@ class RadioItem {
   Color color;
   double fontSize;
   FontWeight fontWeight;
-  GestureTapCallback onTap;
+  Function(int) onTap;
 }

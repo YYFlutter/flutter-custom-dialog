@@ -5,7 +5,6 @@ import '../flutter_custom_dialog.dart';
 
 var listTileItems = [
   ListTileItem(
-    onTap: () {},
     padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
     leading: ClipOval(
       child: Image.network(
@@ -20,7 +19,6 @@ var listTileItems = [
     fontSize: 16.0,
   ),
   ListTileItem(
-    onTap: () {},
     padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
     leading: ClipOval(
       child: Image.network(
@@ -35,7 +33,6 @@ var listTileItems = [
     fontSize: 16.0,
   ),
   ListTileItem(
-    onTap: () {},
     padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
     leading: ClipOval(
       child: Image.network(
@@ -50,7 +47,6 @@ var listTileItems = [
     fontSize: 16.0,
   ),
   ListTileItem(
-    onTap: () {},
     padding: EdgeInsets.fromLTRB(16.0, 6.0, 16.0, 6.0),
     leading: ClipOval(
         child: Container(
@@ -67,63 +63,54 @@ var listTileItems = [
 
 var radioItems = [
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "None",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Callisto",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Ganymede",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Luna",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Oberon",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Phobos",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Dione",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "James",
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
-    onTap: () {},
     padding: EdgeInsets.only(left: 6.0),
     text: "Lina",
     color: Colors.black,
@@ -142,7 +129,12 @@ YYDialog YYListViewDialog1(BuildContext context) {
       fontSize: 18.0,
       fontWeight: FontWeight.w500,
     )
-    ..listViewOfListTile(items: listTileItems)
+    ..listViewOfListTile(
+        items: listTileItems,
+        onClickItemListener: (index) {
+          var listTileItem = listTileItems[index];
+          print(listTileItem.text + " is on click");
+        })
     ..show();
 }
 
@@ -158,7 +150,14 @@ YYDialog YYListViewDialog2(BuildContext context) {
       fontWeight: FontWeight.w500,
     )
     ..divider()
-    ..listViewOfRadioButton(items: radioItems, height: 370)
+    ..listViewOfRadioButton(
+        items: radioItems,
+        height: 370,
+        activeColor: Colors.deepPurpleAccent,
+        onClickItemListener: (index) {
+          var radioItem = radioItems[index];
+          print(radioItem.text + " is on click");
+        })
     ..divider()
     ..doubleButton(
       padding: EdgeInsets.only(top: 8.0, bottom: 8.0),

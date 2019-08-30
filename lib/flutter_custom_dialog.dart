@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 
+import 'components/bean/dialog_gravity.dart';
+
 class YYDialog {
+  //================================弹窗属性======================================
   List<Widget> widgetList = [];
   BuildContext context;
-  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.center;
-  double width;
-  double height;
-  Color backgroundColor = Colors.white;
-  double borderRadius = 0.0;
-  BoxConstraints constraints;
+  double width; //弹窗宽度
+  double height; //弹窗高度
+  Gravity gravity = Gravity.center; //弹窗位置
+  Color backgroundColor = Colors.white; //弹窗背景
+  double borderRadius = 0.0; //弹窗圆角
+  BoxConstraints constraints; //弹窗约束
+  //============================================================================
 
   YYDialog build(context) {
     this.context = context;
@@ -44,14 +47,17 @@ class YYDialog {
   YYDialog doubleButton({
     padding,
     mainAxisAlignment,
+    isClickAutoDismiss = true, //点击按钮后自动关闭
     text1,
     color1,
     fontSize1,
     fontWeight1,
+    VoidCallback onTap1,
     text2,
     color2,
     fontSize2,
     fontWeight2,
+    onTap2,
   }) {
     return this.widget(
       Padding(
@@ -60,7 +66,12 @@ class YYDialog {
           mainAxisAlignment: mainAxisAlignment,
           children: <Widget>[
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                if (onTap1 != null) onTap1();
+                if (isClickAutoDismiss) {
+                  dismiss();
+                }
+              },
               padding: EdgeInsets.all(0.0),
               child: Text(
                 text1 ?? "",
@@ -72,7 +83,12 @@ class YYDialog {
               ),
             ),
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                if (onTap2 != null) onTap2();
+                if (isClickAutoDismiss) {
+                  dismiss();
+                }
+              },
               padding: EdgeInsets.all(0.0),
               child: Text(
                 text2 ?? "",
@@ -89,7 +105,12 @@ class YYDialog {
     );
   }
 
-  YYDialog listViewOfListTile({List<ListTileItem> items, double height}) {
+  YYDialog listViewOfListTile({
+    List<ListTileItem> items,
+    double height,
+    isClickAutoDismiss = true,
+    Function(int) onClickItemListener,
+  }) {
     return this.widget(
       Container(
         height: height,
@@ -101,8 +122,15 @@ class YYDialog {
             return Material(
               color: Colors.white,
               child: InkWell(
-                onTap: items[index].onTap,
                 child: ListTile(
+                  onTap: () {
+                    if (onClickItemListener != null) {
+                      onClickItemListener(index);
+                    }
+                    if (isClickAutoDismiss) {
+                      dismiss();
+                    }
+                  },
                   contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
                   leading: items[index].leading,
                   title: Text(
@@ -122,8 +150,13 @@ class YYDialog {
     );
   }
 
-  YYDialog listViewOfRadioButton({List<RadioItem> items, double height}) {
-    var _groupValue = -1;
+  YYDialog listViewOfRadioButton({
+    List<RadioItem> items,
+    double height,
+    Color activeColor,
+    Function(int) onClickItemListener,
+  }) {
+    var _groupValue = 0;
     return this.widget(
       Container(
         height: height,
@@ -135,8 +168,12 @@ class YYDialog {
             return Material(
               color: Colors.white,
               child: InkWell(
-                onTap: items[index].onTap,
                 child: ListTile(
+                  onTap: () {
+                    if (onClickItemListener != null) {
+                      onClickItemListener(index);
+                    }
+                  },
                   contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
                   leading: Radio(
                     value: index,
@@ -144,7 +181,7 @@ class YYDialog {
                     onChanged: (int value) {
                       _groupValue = value;
                     },
-                    activeColor: Colors.red,
+                    activeColor: activeColor,
                   ),
                   title: Text(
                     items[index].text ?? "",
@@ -173,12 +210,35 @@ class YYDialog {
   }
 
   void show() {
+    var mainAxisAlignment = MainAxisAlignment.start;
+    var crossAxisAlignment = CrossAxisAlignment.center;
+    switch (gravity) {
+      case Gravity.bottom:
+        mainAxisAlignment = MainAxisAlignment.end;
+        break;
+      case Gravity.top:
+        mainAxisAlignment = MainAxisAlignment.start;
+        break;
+      case Gravity.left:
+        mainAxisAlignment = MainAxisAlignment.center;
+        crossAxisAlignment = CrossAxisAlignment.start;
+        break;
+      case Gravity.right:
+        mainAxisAlignment = MainAxisAlignment.center;
+        crossAxisAlignment = CrossAxisAlignment.end;
+        break;
+      default:
+        mainAxisAlignment = MainAxisAlignment.center;
+        break;
+    }
+
     Size size = MediaQuery.of(context).size;
     CustomDialog(
       context: context,
       child: Column(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: mainAxisAlignment,
+        crossAxisAlignment: crossAxisAlignment,
         children: <Widget>[
           Material(
             type: MaterialType.transparency,
@@ -203,6 +263,10 @@ class YYDialog {
         ],
       ),
     );
+  }
+
+  void dismiss() {
+    Navigator.of(context).pop();
   }
 }
 
