@@ -19,3 +19,21 @@ class ListTileItem {
   FontWeight fontWeight;
   GestureTapCallback onTap;
 }
+
+class RadioItem {
+  RadioItem({
+    this.padding,
+    this.text,
+    this.color,
+    this.fontSize,
+    this.fontWeight,
+    this.onTap,
+  });
+
+  EdgeInsets padding;
+  String text;
+  Color color;
+  double fontSize;
+  FontWeight fontWeight;
+  GestureTapCallback onTap;
+}

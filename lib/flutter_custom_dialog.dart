@@ -89,9 +89,10 @@ class YYDialog {
     );
   }
 
-  YYDialog listViewOfListTile({List<ListTileItem> items}) {
+  YYDialog listViewOfListTile({List<ListTileItem> items, double height}) {
     return this.widget(
-      Material(
+      Container(
+        height: height,
         child: ListView.builder(
           padding: EdgeInsets.all(0.0),
           shrinkWrap: true,
@@ -102,8 +103,49 @@ class YYDialog {
               child: InkWell(
                 onTap: items[index].onTap,
                 child: ListTile(
-                  contentPadding: items[index].padding,
+                  contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
                   leading: items[index].leading,
+                  title: Text(
+                    items[index].text ?? "",
+                    style: TextStyle(
+                      color: items[index].color ?? null,
+                      fontSize: items[index].fontSize ?? null,
+                      fontWeight: items[index].fontWeight ?? null,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  YYDialog listViewOfRadioButton({List<RadioItem> items, double height}) {
+    var _groupValue = -1;
+    return this.widget(
+      Container(
+        height: height,
+        child: ListView.builder(
+          padding: EdgeInsets.all(0.0),
+          shrinkWrap: true,
+          itemCount: items.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Material(
+              color: Colors.white,
+              child: InkWell(
+                onTap: items[index].onTap,
+                child: ListTile(
+                  contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
+                  leading: Radio(
+                    value: index,
+                    groupValue: _groupValue,
+                    onChanged: (int value) {
+                      _groupValue = value;
+                    },
+                    activeColor: Colors.red,
+                  ),
                   title: Text(
                     items[index].text ?? "",
                     style: TextStyle(

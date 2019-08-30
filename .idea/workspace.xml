@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64ffa824-a38c-465f-9347-f69db912f241" name="Default Changelist" comment="布局">
-      <change afterPath="$PROJECT_DIR$/lib/components/listview_dialog.dart" afterDir="false" />
+    <list default="true" id="64ffa824-a38c-465f-9347-f69db912f241" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/alert_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/dialog_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bean/dialog_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bean/dialog_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bean/dialog_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/listview_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/listview_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/flutter_custom_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_custom_dialog.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -28,14 +24,14 @@
     <session id="2142450520">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="2993" />
+          <entry key="dart" value="3483" />
           <entry key="md" value="16" />
           <entry key="txt" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="2993" />
+          <entry key="Dart" value="3483" />
           <entry key="PLAIN_TEXT" value="38" />
         </counts>
       </usages-collector>
@@ -70,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/flutter_custom_dialog.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="91" column="23" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
+            <state relative-caret-position="515">
+              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -100,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/components/bean/dialog_item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state relative-caret-position="525">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -118,20 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/components/alert_dialog.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/components/listview_dialog.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
-              <caret line="52" column="26" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="26" />
+            <state relative-caret-position="622">
+              <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -140,10 +124,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/components/listview_dialog.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="797">
-              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+            <state relative-caret-position="818">
+              <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
               <folding>
                 <element signature="e#32#71#0" expanded="true" />
               </folding>
@@ -176,12 +172,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>height</find>
       <find>fontWeight</find>
       <find>letterSpacing</find>
       <find>widgetList</find>
       <find>borderRadius</find>
       <find>alertdialog</find>
+      <find>height</find>
       <find>YYListTileDialog1</find>
     </findStrings>
   </component>
@@ -196,12 +192,13 @@
         <option value="$PROJECT_DIR$/test/flutter_custom_dialog_test.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/components/dialog_item.dart" />
-        <option value="$PROJECT_DIR$/lib/flutter_custom_dialog.dart" />
         <option value="$PROJECT_DIR$/lib/components/dialog.dart" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/components/alert_dialog.dart" />
-        <option value="$PROJECT_DIR$/lib/components/listview_dialog.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/components/bean/dialog_item.dart" />
+        <option value="$PROJECT_DIR$/lib/flutter_custom_dialog.dart" />
+        <option value="$PROJECT_DIR$/lib/components/listview_dialog.dart" />
       </list>
     </option>
   </component>
@@ -361,14 +358,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567055609089</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="布局">
+      <created>1567056034228</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1567056034228</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-243" width="1096" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27316603" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27316603" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Captures" order="2" side_tool="true" />
       <window_info id="Resources Explorer" order="3" />
@@ -383,7 +387,7 @@
       <window_info anchor="bottom" id="Android Profiler" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Messages" order="4" weight="0.32832617" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.20379965" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.20379965" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" />
@@ -533,17 +537,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="818">
+          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+          <folding>
+            <element signature="e#32#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/components/alert_dialog.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/components/bean/dialog_item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state relative-caret-position="525">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/flutter_custom_dialog.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="91" column="23" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
+        <state relative-caret-position="515">
+          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -552,30 +576,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/components/listview_dialog.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="26" />
+        <state relative-caret-position="484">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/components/alert_dialog.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="797">
-          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
-          <folding>
-            <element signature="e#32#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
