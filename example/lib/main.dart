@@ -27,6 +27,7 @@ class AppHome extends StatelessWidget {
           children: <Widget>[
             showAlertDialog(context),
             showListViewDialog(context),
+            showProgressDialog(context),
           ],
         ),
       ),
@@ -140,6 +141,24 @@ showListViewDialog(BuildContext context) {
             makeTextButton("listRadio", () {
               YYListViewDialogListButton(context);
             }),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
+showProgressDialog(BuildContext context) {
+  return Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Text("YYProgressDialog", style: titleTextStyle),
+        Text("1、demo"),
+        Row(
+          children: <Widget>[
+            makeTextButton("title", () {}),
           ],
         ),
       ],
