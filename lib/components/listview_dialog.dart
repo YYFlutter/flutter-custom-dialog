@@ -119,7 +119,7 @@ var radioItems = [
   ),
 ];
 
-YYDialog YYListViewDialog1(BuildContext context) {
+YYDialog YYListViewDialogListTile(BuildContext context) {
   return YYDialog().build(context)
     ..width = 280
     ..borderRadius = 4.0
@@ -139,7 +139,7 @@ YYDialog YYListViewDialog1(BuildContext context) {
     ..show();
 }
 
-YYDialog YYListViewDialog2(BuildContext context) {
+YYDialog YYListViewDialogListButton(BuildContext context) {
   return YYDialog().build(context)
     ..width = 280
     ..borderRadius = 4.0
