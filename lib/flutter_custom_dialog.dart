@@ -47,7 +47,9 @@ class YYDialog {
   YYDialog doubleButton({
     padding,
     gravity,
+    height,
     isClickAutoDismiss = true, //点击按钮后自动关闭
+    withDivider = false, //中间分割线
     text1,
     color1,
     fontSize1,
@@ -60,8 +62,8 @@ class YYDialog {
     onTap2,
   }) {
     return this.widget(
-      Padding(
-        padding: padding ?? EdgeInsets.all(0.0),
+      SizedBox(
+        height: height ?? 45.0,
         child: Row(
           mainAxisAlignment: getRowMainAxisAlignment(gravity),
           children: <Widget>[
@@ -81,6 +83,10 @@ class YYDialog {
                   fontWeight: fontWeight1 ?? null,
                 ),
               ),
+            ),
+            Visibility(
+              visible: withDivider,
+              child: VerticalDivider(),
             ),
             FlatButton(
               onPressed: () {
@@ -308,7 +314,7 @@ class YYDialog {
         break;
       case Gravity.center:
       default:
-        mainAxisAlignment = MainAxisAlignment.spaceAround;
+        mainAxisAlignment = MainAxisAlignment.center;
         break;
     }
     return mainAxisAlignment;

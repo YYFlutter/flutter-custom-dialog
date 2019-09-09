@@ -47,8 +47,11 @@ showAlertDialog(BuildContext context) {
             makeTextButton("body", () {
               YYAlertDialogBody(context);
             }),
-            makeTextButton("head&body", () {
+            makeTextButton("head", () {
               YYAlertDialogHeadAndBody(context);
+            }),
+            makeTextButton("divider", () {
+              YYAlertDialogWithDivider(context);
             }),
           ],
         ),
@@ -81,15 +84,39 @@ showAlertDialog(BuildContext context) {
                 gravity: Gravity.right,
               );
             }),
+            makeTextButton("center", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.center,
+              );
+            }),
           ],
         ),
         Text("3、double button gravity"),
         Row(
           children: <Widget>[
-            makeTextButton("bottom", () {}),
-            makeTextButton("top", () {}),
-            makeTextButton("left", () {}),
-            makeTextButton("right", () {}),
+            makeTextButton("left", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                doubleButtonGravity: Gravity.left,
+              );
+            }),
+            makeTextButton("right", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                doubleButtonGravity: Gravity.right,
+              );
+            }),
+            makeTextButton("center", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                doubleButtonGravity: Gravity.center,
+              );
+            }),
           ],
         ),
       ],
@@ -110,7 +137,7 @@ showListViewDialog(BuildContext context) {
             makeTextButton("listTile", () {
               YYListViewDialogListTile(context);
             }),
-            makeTextButton("listButton", () {
+            makeTextButton("listRadio", () {
               YYListViewDialogListButton(context);
             }),
           ],
@@ -121,10 +148,15 @@ showListViewDialog(BuildContext context) {
 }
 
 Widget makeTextButton(title, Function() function) {
-  return RaisedButton(
-    onPressed: () {
-      function();
-    },
-    child: Text(title),
+  return SizedBox(
+    width: 70.0,
+    height: 35.0,
+    child: RaisedButton(
+      padding: EdgeInsets.all(0.0),
+      onPressed: () {
+        function();
+      },
+      child: Text(title),
+    ),
   );
 }
