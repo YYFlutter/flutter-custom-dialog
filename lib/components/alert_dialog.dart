@@ -64,7 +64,7 @@ YYDialog YYAlertDialogHeadAndBody(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithGravity([context, width, gravity]) {
+YYDialog YYAlertDialogWithGravity({context, width, gravity}) {
   return YYDialog().build(context)
     ..width = width
     ..gravity = gravity

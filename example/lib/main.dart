@@ -52,21 +52,44 @@ showAlertDialog(BuildContext context) {
             }),
           ],
         ),
-        Text("2、gravity"),
+        Text("2、dialog gravity"),
         Row(
           children: <Widget>[
             makeTextButton("bottom", () {
-              YYAlertDialogWithGravity(context, null, Gravity.bottom);
+              YYAlertDialogWithGravity(
+                context: context,
+                gravity: Gravity.bottom,
+              );
             }),
             makeTextButton("top", () {
-              YYAlertDialogWithGravity(context, null, Gravity.top);
+              YYAlertDialogWithGravity(
+                context: context,
+                gravity: Gravity.top,
+              );
             }),
             makeTextButton("left", () {
-              YYAlertDialogWithGravity(context, 250.0, Gravity.left);
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.left,
+              );
             }),
             makeTextButton("right", () {
-              YYAlertDialogWithGravity(context, 250.0, Gravity.right);
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.right,
+              );
             }),
+          ],
+        ),
+        Text("3、double button gravity"),
+        Row(
+          children: <Widget>[
+            makeTextButton("bottom", () {}),
+            makeTextButton("top", () {}),
+            makeTextButton("left", () {}),
+            makeTextButton("right", () {}),
           ],
         ),
       ],
