@@ -46,7 +46,7 @@ class YYDialog {
 
   YYDialog doubleButton({
     padding,
-    mainAxisAlignment,
+    gravity,
     isClickAutoDismiss = true, //点击按钮后自动关闭
     text1,
     color1,
@@ -63,7 +63,7 @@ class YYDialog {
       Padding(
         padding: padding ?? EdgeInsets.all(0.0),
         child: Row(
-          mainAxisAlignment: mainAxisAlignment,
+          mainAxisAlignment: getRowMainAxisAlignment(gravity),
           children: <Widget>[
             FlatButton(
               onPressed: () {
@@ -210,27 +210,8 @@ class YYDialog {
   }
 
   void show() {
-    var mainAxisAlignment = MainAxisAlignment.start;
-    var crossAxisAlignment = CrossAxisAlignment.center;
-    switch (gravity) {
-      case Gravity.bottom:
-        mainAxisAlignment = MainAxisAlignment.end;
-        break;
-      case Gravity.top:
-        mainAxisAlignment = MainAxisAlignment.start;
-        break;
-      case Gravity.left:
-        mainAxisAlignment = MainAxisAlignment.center;
-        crossAxisAlignment = CrossAxisAlignment.start;
-        break;
-      case Gravity.right:
-        mainAxisAlignment = MainAxisAlignment.center;
-        crossAxisAlignment = CrossAxisAlignment.end;
-        break;
-      default:
-        mainAxisAlignment = MainAxisAlignment.center;
-        break;
-    }
+    var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
+    var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
 
     Size size = MediaQuery.of(context).size;
     CustomDialog(
@@ -268,6 +249,69 @@ class YYDialog {
 
   void dismiss() {
     Navigator.of(context).pop();
+  }
+
+  getColumnMainAxisAlignment(gravity) {
+    var mainAxisAlignment = MainAxisAlignment.start;
+    switch (gravity) {
+      case Gravity.bottom:
+        mainAxisAlignment = MainAxisAlignment.end;
+        break;
+      case Gravity.top:
+        mainAxisAlignment = MainAxisAlignment.start;
+        break;
+      case Gravity.left:
+        mainAxisAlignment = MainAxisAlignment.center;
+        break;
+      case Gravity.right:
+        mainAxisAlignment = MainAxisAlignment.center;
+        break;
+      case Gravity.center:
+      default:
+        mainAxisAlignment = MainAxisAlignment.center;
+        break;
+    }
+    return mainAxisAlignment;
+  }
+
+  getColumnCrossAxisAlignment(gravity) {
+    var crossAxisAlignment = CrossAxisAlignment.center;
+    switch (gravity) {
+      case Gravity.bottom:
+        break;
+      case Gravity.top:
+        break;
+      case Gravity.left:
+        crossAxisAlignment = CrossAxisAlignment.start;
+        break;
+      case Gravity.right:
+        crossAxisAlignment = CrossAxisAlignment.end;
+        break;
+      default:
+        break;
+    }
+    return crossAxisAlignment;
+  }
+
+  getRowMainAxisAlignment(gravity) {
+    var mainAxisAlignment = MainAxisAlignment.start;
+    switch (gravity) {
+      case Gravity.bottom:
+        break;
+      case Gravity.top:
+        break;
+      case Gravity.left:
+        mainAxisAlignment = MainAxisAlignment.start;
+        break;
+      case Gravity.right:
+        mainAxisAlignment = MainAxisAlignment.end;
+        break;
+      case Gravity.center:
+      default:
+        mainAxisAlignment = MainAxisAlignment.spaceAround;
+        break;
+    }
+    return mainAxisAlignment;
   }
 }
 

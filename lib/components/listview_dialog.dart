@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 
 import '../flutter_custom_dialog.dart';
+import 'bean/dialog_gravity.dart';
 
 var listTileItems = [
   ListTileItem(
@@ -161,7 +162,7 @@ YYDialog YYListViewDialog2(BuildContext context) {
     ..divider()
     ..doubleButton(
       padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "CANCEL",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,

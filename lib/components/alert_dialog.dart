@@ -21,7 +21,7 @@ YYDialog YYAlertDialog1(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "ACTION 1",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -49,7 +49,7 @@ YYDialog YYAlertDialog2(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 10.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "CANCEL",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -82,7 +82,7 @@ YYDialog YYAlertDialog3(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -113,7 +113,7 @@ YYDialog YYAlertDialog4(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -144,7 +144,7 @@ YYDialog YYAlertDialog5(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -176,7 +176,7 @@ YYDialog YYAlertDialog6(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,
@@ -208,7 +208,7 @@ YYDialog YYAlertDialog7(BuildContext context) {
     )
     ..doubleButton(
       padding: EdgeInsets.only(top: 24.0),
-      mainAxisAlignment: MainAxisAlignment.end,
+      gravity: Gravity.right,
       text1: "DISAGREE",
       color1: Colors.deepPurpleAccent,
       fontSize1: 14.0,

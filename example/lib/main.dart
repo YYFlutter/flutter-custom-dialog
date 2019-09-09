@@ -35,7 +35,7 @@ showAlertDialog(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text("YYAlertDialog:"),
+      Text("YYAlertDialog"),
       Row(
         children: <Widget>[
           makeTextButton("1", () {
@@ -49,6 +49,7 @@ showAlertDialog(BuildContext context) {
           }),
         ],
       ),
+      Text("~ gravity"),
       Row(
         children: <Widget>[
           makeTextButton("bottom", () {
@@ -73,7 +74,7 @@ showListViewDialog(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text("YYListViewDialog:"),
+      Text("YYListViewDialog"),
       Row(
         children: <Widget>[
           makeTextButton("1", () {
