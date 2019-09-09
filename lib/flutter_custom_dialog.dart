@@ -278,7 +278,7 @@ class CustomDialog {
   Color _barrierColor = Colors.black.withOpacity(.3);
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible = true;
-  Gravity _gravity = Gravity.bottom;
+  Gravity _gravity = Gravity.center;
 
   CustomDialog({
     @required Widget child,
@@ -349,9 +349,15 @@ class CustomDialog {
         ).animate(animation);
         break;
       case Gravity.bottom:
-      default:
         custom = Tween<Offset>(
           begin: Offset(0.0, 1.0),
+          end: Offset(0.0, 0.0),
+        ).animate(animation);
+        break;
+      case Gravity.center:
+      default:
+        custom = Tween<Offset>(
+          begin: Offset(0.0, 0.0),
           end: Offset(0.0, 0.0),
         ).animate(animation);
         break;
