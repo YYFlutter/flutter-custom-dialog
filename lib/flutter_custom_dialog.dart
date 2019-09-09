@@ -234,6 +234,7 @@ class YYDialog {
 
     Size size = MediaQuery.of(context).size;
     CustomDialog(
+      gravity: gravity,
       context: context,
       child: Column(
         textDirection: TextDirection.ltr,
@@ -277,6 +278,7 @@ class CustomDialog {
   Color _barrierColor = Colors.black.withOpacity(.3);
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible = true;
+  Gravity _gravity = Gravity.bottom;
 
   CustomDialog({
     @required Widget child,
@@ -284,8 +286,10 @@ class CustomDialog {
     Duration duration,
     Color barrierColor,
     RouteTransitionsBuilder transitionsBuilder,
+    Gravity gravity,
   })  : _child = child,
-        _context = context {
+        _context = context,
+        _gravity = gravity {
     if (duration != null) {
       _duration = duration;
     }
@@ -324,17 +328,35 @@ class CustomDialog {
       Animation<double> animation,
       Animation<double> secondaryAnimation,
       Widget child) {
-//  return FadeTransition(
-//    opacity: CurvedAnimation(
-//      parent: animation,
-//      curve: Curves.easeOut,
-//    ),
-//    child: child,
-//  );
-    Animation<Offset> custom = Tween<Offset>(
-      begin: Offset(0.0, 1.0),
-      end: Offset(0.0, 0.0),
-    ).animate(animation);
+    Animation<Offset> custom;
+    switch (_gravity) {
+      case Gravity.top:
+        custom = Tween<Offset>(
+          begin: Offset(0.0, -1.0),
+          end: Offset(0.0, 0.0),
+        ).animate(animation);
+        break;
+      case Gravity.left:
+        custom = Tween<Offset>(
+          begin: Offset(-1.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ).animate(animation);
+        break;
+      case Gravity.right:
+        custom = Tween<Offset>(
+          begin: Offset(1.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ).animate(animation);
+        break;
+      case Gravity.bottom:
+      default:
+        custom = Tween<Offset>(
+          begin: Offset(0.0, 1.0),
+          end: Offset(0.0, 0.0),
+        ).animate(animation);
+        break;
+    }
+
     return SlideTransition(
       position: custom,
       child: child,
