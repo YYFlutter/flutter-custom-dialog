@@ -159,6 +159,9 @@ showProgressDialog(BuildContext context) {
         Text("1、demo"),
         Row(
           children: <Widget>[
+            makeTextButton("nobody", () {
+              YYProgressDialogNoBody(context);
+            }),
             makeTextButton("body", () {
               YYProgressDialogBody(context);
             }),
