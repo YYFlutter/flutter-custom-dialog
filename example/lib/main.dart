@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/components/alert_dialog.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
 import 'package:flutter_custom_dialog/components/listview_dialog.dart';
+import 'package:flutter_custom_dialog/components/progress_dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -158,7 +159,9 @@ showProgressDialog(BuildContext context) {
         Text("1、demo"),
         Row(
           children: <Widget>[
-            makeTextButton("title", () {}),
+            makeTextButton("body", () {
+              YYProgressDialogBody(context);
+            }),
           ],
         ),
       ],

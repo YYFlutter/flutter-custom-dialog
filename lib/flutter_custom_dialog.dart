@@ -206,6 +206,18 @@ class YYDialog {
     );
   }
 
+  YYDialog circularProgress(
+      {padding, backgroundColor, valueColor, strokeWidth}) {
+    return this.widget(Padding(
+      padding: padding,
+      child: CircularProgressIndicator(
+        strokeWidth: strokeWidth ?? 4.0,
+        backgroundColor: backgroundColor,
+        valueColor: AlwaysStoppedAnimation<Color>(valueColor),
+      ),
+    ));
+  }
+
   YYDialog divider({color, height}) {
     return this.widget(
       Divider(
