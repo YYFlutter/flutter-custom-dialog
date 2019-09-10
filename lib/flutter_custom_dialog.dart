@@ -163,9 +163,16 @@ class YYDialog {
     Color activeColor,
     Function(int) onClickItemListener,
   }) {
+    print("YYDialog ==> listViewOfRadioButton()");
+    Size size = MediaQuery.of(context).size;
     return this.widget(
       Container(
         height: height,
+        constraints: BoxConstraints(
+          minHeight: size.height * .1,
+          minWidth: size.width * .1,
+          maxHeight: size.height * .5,
+        ),
         child: YYRadioListTile(
           items: items,
           activeColor: activeColor,
@@ -197,9 +204,9 @@ class YYDialog {
   }
 
   void show() {
+    print("YYDialog ==> show()");
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
-
     Size size = MediaQuery.of(context).size;
     CustomDialog(
       gravity: gravity,
