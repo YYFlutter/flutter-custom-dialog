@@ -140,7 +140,7 @@ showListViewDialog(BuildContext context) {
               YYListViewDialogListTile(context);
             }),
             makeTextButton("listRadio", () {
-              YYListViewDialogListButton(context);
+              YYListViewDialogListRadio(context);
             }),
           ],
         ),

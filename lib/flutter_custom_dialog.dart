@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 
 import 'components/bean/dialog_gravity.dart';
+import 'flutter_custom_dialog_widget.dart';
 
 class YYDialog {
   //================================弹窗属性======================================
@@ -162,45 +163,13 @@ class YYDialog {
     Color activeColor,
     Function(int) onClickItemListener,
   }) {
-    var _groupValue = 0;
     return this.widget(
       Container(
         height: height,
-        child: ListView.builder(
-          padding: EdgeInsets.all(0.0),
-          shrinkWrap: true,
-          itemCount: items.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Material(
-              color: Colors.white,
-              child: InkWell(
-                child: ListTile(
-                  onTap: () {
-                    if (onClickItemListener != null) {
-                      onClickItemListener(index);
-                    }
-                  },
-                  contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
-                  leading: Radio(
-                    value: index,
-                    groupValue: _groupValue,
-                    onChanged: (int value) {
-                      _groupValue = value;
-                    },
-                    activeColor: activeColor,
-                  ),
-                  title: Text(
-                    items[index].text ?? "",
-                    style: TextStyle(
-                      color: items[index].color ?? null,
-                      fontSize: items[index].fontSize ?? null,
-                      fontWeight: items[index].fontWeight ?? null,
-                    ),
-                  ),
-                ),
-              ),
-            );
-          },
+        child: YYRadioListTile(
+          items: items,
+          activeColor: activeColor,
+          onChanged: onClickItemListener,
         ),
       ),
     );

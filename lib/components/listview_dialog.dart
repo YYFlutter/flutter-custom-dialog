@@ -139,7 +139,7 @@ YYDialog YYListViewDialogListTile(BuildContext context) {
     ..show();
 }
 
-YYDialog YYListViewDialogListButton(BuildContext context) {
+YYDialog YYListViewDialogListRadio(BuildContext context) {
   return YYDialog().build(context)
     ..width = 280
     ..borderRadius = 4.0
