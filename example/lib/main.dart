@@ -141,7 +141,18 @@ showAlertDialog(BuildContext context) {
         Text("5、dialog animation"),
         Row(
           children: <Widget>[
-            makeTextButton("scaleIn", () {}),
+            makeTextButton("scaleIn", () {
+              YYAlertDialogWithScaleIn(context);
+            }),
+            makeTextButton("fadeIn", () {
+              YYAlertDialogWithFadeIn(context);
+            }),
+            makeTextButton("rotateIn", () {
+              YYAlertDialogWithRotateIn(context);
+            }),
+            makeTextButton("customIn", () {
+              YYAlertDialogWithCustomIn(context);
+            }),
           ],
         ),
       ],

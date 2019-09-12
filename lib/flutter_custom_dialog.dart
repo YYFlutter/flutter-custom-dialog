@@ -17,7 +17,7 @@ class YYDialog {
   Color backgroundColor = Colors.white; //弹窗内的背景色
   double borderRadius = 0.0; //弹窗圆角
   BoxConstraints constraints; //弹窗约束
-  AnimatedWidget animatedWidget; //弹窗出现的动画
+  Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
   //============================================================================
 
@@ -209,7 +209,6 @@ class YYDialog {
   }
 
   void show() {
-    print("YYDialog ==> show()");
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
     Size size = MediaQuery.of(context).size;
@@ -217,7 +216,7 @@ class YYDialog {
       gravity: gravity,
       context: context,
       barrierColor: barrierColor,
-      animatedWidget: animatedWidget,
+      animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
       duration: duration,
       child: Column(
@@ -326,7 +325,7 @@ class CustomDialog {
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible;
   Gravity _gravity;
-  AnimatedWidget _animatedWidget;
+  Function _animatedFunc;
 
   CustomDialog({
     @required Widget child,
@@ -335,13 +334,14 @@ class CustomDialog {
     Color barrierColor,
     RouteTransitionsBuilder transitionsBuilder,
     Gravity gravity,
-    AnimatedWidget animatedWidget,
+    Function animatedFunc,
     bool barrierDismissible,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
         _duration = duration,
         _barrierColor = barrierColor,
+        _animatedFunc = animatedFunc,
         _transitionsBuilder = transitionsBuilder,
         _barrierDismissible = barrierDismissible {
     this.show();
@@ -408,10 +408,13 @@ class CustomDialog {
         break;
     }
 
-    return _animatedWidget ??
-        SlideTransition(
-          position: custom,
-          child: child,
-        );
+    if (_animatedFunc != null) {
+      return _animatedFunc(child, animation);
+    }
+
+    return SlideTransition(
+      position: custom,
+      child: child,
+    );
   }
 }
