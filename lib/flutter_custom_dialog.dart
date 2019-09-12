@@ -6,14 +6,19 @@ import 'flutter_custom_dialog_widget.dart';
 
 class YYDialog {
   //================================弹窗属性======================================
-  List<Widget> widgetList = [];
-  BuildContext context;
+  List<Widget> widgetList = []; //弹窗内部所有组件
+  BuildContext context; //弹窗上下文
+
   double width; //弹窗宽度
   double height; //弹窗高度
-  Gravity gravity = Gravity.center; //弹窗位置
-  Color backgroundColor = Colors.white; //弹窗背景
+  Duration duration = Duration(milliseconds: 250); //弹窗动画出现的时间
+  Gravity gravity = Gravity.center; //弹窗出现的位置
+  Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
+  Color backgroundColor = Colors.white; //弹窗内的背景色
   double borderRadius = 0.0; //弹窗圆角
   BoxConstraints constraints; //弹窗约束
+  AnimatedWidget animatedWidget; //弹窗出现的动画
+  bool barrierDismissible = true; //是否点击弹出外部消失
   //============================================================================
 
   YYDialog build(context) {
@@ -211,6 +216,10 @@ class YYDialog {
     CustomDialog(
       gravity: gravity,
       context: context,
+      barrierColor: barrierColor,
+      animatedWidget: animatedWidget,
+      barrierDismissible: barrierDismissible,
+      duration: duration,
       child: Column(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: mainAxisAlignment,
@@ -312,11 +321,12 @@ class YYDialog {
 class CustomDialog {
   BuildContext _context;
   Widget _child;
-  Duration _duration = Duration(milliseconds: 250);
-  Color _barrierColor = Colors.black.withOpacity(.3);
+  Duration _duration;
+  Color _barrierColor;
   RouteTransitionsBuilder _transitionsBuilder;
-  bool _barrierDismissible = true;
-  Gravity _gravity = Gravity.center;
+  bool _barrierDismissible;
+  Gravity _gravity;
+  AnimatedWidget _animatedWidget;
 
   CustomDialog({
     @required Widget child,
@@ -325,28 +335,25 @@ class CustomDialog {
     Color barrierColor,
     RouteTransitionsBuilder transitionsBuilder,
     Gravity gravity,
+    AnimatedWidget animatedWidget,
+    bool barrierDismissible,
   })  : _child = child,
         _context = context,
-        _gravity = gravity {
-    if (duration != null) {
-      _duration = duration;
-    }
-    if (barrierColor != null) {
-      _barrierColor = barrierColor;
-    }
-    if (transitionsBuilder != null) {
-      _transitionsBuilder = transitionsBuilder;
-    }
+        _gravity = gravity,
+        _duration = duration,
+        _barrierColor = barrierColor,
+        _transitionsBuilder = transitionsBuilder,
+        _barrierDismissible = barrierDismissible {
     this.show();
   }
 
   show() {
     showGeneralDialog(
       context: _context,
-      barrierColor: _barrierColor,
-      barrierDismissible: _barrierDismissible,
+      barrierColor: _barrierColor ?? Colors.black.withOpacity(.3),
+      barrierDismissible: _barrierDismissible ?? true,
       barrierLabel: "",
-      transitionDuration: _duration,
+      transitionDuration: _duration ?? Duration(milliseconds: 250),
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
@@ -401,9 +408,10 @@ class CustomDialog {
         break;
     }
 
-    return SlideTransition(
-      position: custom,
-      child: child,
-    );
+    return _animatedWidget ??
+        SlideTransition(
+          position: custom,
+          child: child,
+        );
   }
 }

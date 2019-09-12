@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../flutter_custom_dialog.dart';
-import 'bean/dialog_gravity.dart';
+import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 YYDialog YYAlertDialogBody(BuildContext context) {
   return YYDialog().build(context)
@@ -89,6 +88,127 @@ YYDialog YYAlertDialogWithDivider(BuildContext context) {
       color2: Colors.redAccent,
       fontSize2: 14.0,
       fontWeight2: FontWeight.bold,
+    )
+    ..show();
+}
+
+YYDialog YYAlertDialogWithDuration(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 240
+    ..borderRadius = 4.0
+    ..gravity = Gravity.left
+    ..duration = Duration(seconds: 1)
+    ..text(
+      padding: EdgeInsets.all(18.0),
+      text: "Dialog header",
+      color: Colors.black,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+    )
+    ..text(
+      padding: EdgeInsets.only(left: 18.0, right: 18.0),
+      text: "Dialog body text",
+      color: Colors.grey[500],
+    )
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 24.0),
+      gravity: Gravity.center,
+      text1: "ACTION 1",
+      color1: Colors.deepPurpleAccent,
+      fontSize1: 14.0,
+      text2: "ACTION 2",
+      color2: Colors.deepPurpleAccent,
+      fontSize2: 14.0,
+    )
+    ..show();
+}
+
+YYDialog YYAlertDialogWithbarrierColor(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 240
+    ..borderRadius = 4.0
+    ..barrierColor = Colors.redAccent
+    ..text(
+      padding: EdgeInsets.all(18.0),
+      text: "Dialog header",
+      color: Colors.black,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+    )
+    ..text(
+      padding: EdgeInsets.only(left: 18.0, right: 18.0),
+      text: "Dialog body text",
+      color: Colors.grey[500],
+    )
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 24.0),
+      gravity: Gravity.center,
+      text1: "ACTION 1",
+      color1: Colors.deepPurpleAccent,
+      fontSize1: 14.0,
+      text2: "ACTION 2",
+      color2: Colors.deepPurpleAccent,
+      fontSize2: 14.0,
+    )
+    ..show();
+}
+
+YYDialog YYAlertDialogWithBackgroundColor(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 240
+    ..borderRadius = 4.0
+    ..backgroundColor = Colors.yellow
+    ..text(
+      padding: EdgeInsets.all(18.0),
+      text: "Dialog header",
+      color: Colors.black,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+    )
+    ..text(
+      padding: EdgeInsets.only(left: 18.0, right: 18.0),
+      text: "Dialog body text",
+      color: Colors.grey[500],
+    )
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 24.0),
+      gravity: Gravity.center,
+      text1: "ACTION 1",
+      color1: Colors.deepPurpleAccent,
+      fontSize1: 14.0,
+      text2: "ACTION 2",
+      color2: Colors.deepPurpleAccent,
+      fontSize2: 14.0,
+    )
+    ..show();
+}
+
+YYDialog YYAlertDialogWithBarrierDismiss(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 240
+    ..borderRadius = 4.0
+    ..barrierDismissible = false
+    ..text(
+      padding: EdgeInsets.all(18.0),
+      text: "Dialog header",
+      color: Colors.black,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w500,
+    )
+    ..text(
+      padding: EdgeInsets.only(left: 18.0, right: 18.0),
+      text: "Dialog body text",
+      color: Colors.grey[500],
+    )
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 24.0),
+      gravity: Gravity.center,
+      text1: "ACTION 1",
+      color1: Colors.deepPurpleAccent,
+      fontSize1: 14.0,
+      text2: "ACTION 2",
+      color2: Colors.deepPurpleAccent,
+      fontSize2: 14.0,
     )
     ..show();
 }

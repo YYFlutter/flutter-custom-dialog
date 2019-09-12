@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../flutter_custom_dialog.dart';
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 YYDialog YYProgressDialogNoBody(BuildContext context) {
   return YYDialog().build(context)

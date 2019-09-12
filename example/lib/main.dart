@@ -1,10 +1,10 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/alert_dialog.dart';
+import 'package:flutter_custom_dialog/components/example/alert_dialog.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
-import 'package:flutter_custom_dialog/components/listview_dialog.dart';
-import 'package:flutter_custom_dialog/components/progress_dialog.dart';
+import 'package:flutter_custom_dialog/components/example/listview_dialog.dart';
+import 'package:flutter_custom_dialog/components/example/progress_dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -57,7 +57,24 @@ showAlertDialog(BuildContext context) {
             }),
           ],
         ),
-        Text("2、dialog gravity"),
+        Text("2、dialog property"),
+        Row(
+          children: <Widget>[
+            makeTextButton("duration", () {
+              YYAlertDialogWithDuration(context);
+            }),
+            makeTextButton("barrier\ncolor", () {
+              YYAlertDialogWithbarrierColor(context);
+            }),
+            makeTextButton("background\ncolor", () {
+              YYAlertDialogWithBackgroundColor(context);
+            }),
+            makeTextButton("barrier\ndismiss", () {
+              YYAlertDialogWithBarrierDismiss(context);
+            }),
+          ],
+        ),
+        Text("3、dialog gravity"),
         Row(
           children: <Widget>[
             makeTextButton("bottom", () {
@@ -95,7 +112,7 @@ showAlertDialog(BuildContext context) {
             }),
           ],
         ),
-        Text("3、double button gravity"),
+        Text("4、double button gravity"),
         Row(
           children: <Widget>[
             makeTextButton("left", () {
@@ -119,6 +136,12 @@ showAlertDialog(BuildContext context) {
                 doubleButtonGravity: Gravity.center,
               );
             }),
+          ],
+        ),
+        Text("5、dialog animation"),
+        Row(
+          children: <Widget>[
+            makeTextButton("scaleIn", () {}),
           ],
         ),
       ],
@@ -181,7 +204,11 @@ Widget makeTextButton(title, Function() function) {
       onPressed: () {
         function();
       },
-      child: Text(title),
+      child: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 12.0),
+      ),
     ),
   );
 }
