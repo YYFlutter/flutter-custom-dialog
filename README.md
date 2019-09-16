@@ -10,22 +10,22 @@
 
 ## 🎖 Installing
 
+**1、install**
+
 ```yaml
 dependencies:
   flutter_custom_dialog: ^1.0.0
 ```
 
-## ⚡ Use Custom Dialog
-
-**1、import**
+**2、import**
 
 ```dart
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 ```
 
-**2、road map**
+## 🎖 Example
 
-> dialog demo
+> dialog_demo
 
 <table>
   <tr>
@@ -67,7 +67,7 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
   </tr>
 </table>
 
-> dialog gravity
+> dialog_gravity
 
 <table>
   <tr>
@@ -109,7 +109,7 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
   </tr>
 </table>
 
-> dialog animation
+> dialog_animation
 
 <table>
   <tr>
