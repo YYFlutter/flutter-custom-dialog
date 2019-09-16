@@ -1,7 +1,7 @@
 name: flutter_custom_dialog
-description: Simple Dialog Simple Display.
-version: 0.0.1
-author:
+description: Semantic dialog
+version: 1.0.0
+author: AndroidHensen <xyj510402535@qq.com>
 homepage: https://github.com/YYFlutter/flutter-custom-dialog.git
 
 environment:
