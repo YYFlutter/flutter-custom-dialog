@@ -230,7 +230,6 @@ doubleButton|双按钮控件
 listViewOfListTile|列表Tile组件
 listViewOfRadioButton|列表按钮组件
 divider|分割线组件
-height|弹窗高度
 widget|自定义语义化组件
 
 ## ⚡ Custom Widget
