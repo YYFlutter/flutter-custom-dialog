@@ -144,11 +144,9 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
   </tr>
 </table>
 
-**3、use**
+## ⚡ Dialog Property
 
-> 功能属性的设置
-
-属性的设置通过成员变量的方法去调用，具体详见下表
+弹窗的属性设置可以通过成员变量的方法去调用，具体详见下表
 
 ```dart
 YYDialog YYDialogDemo(BuildContext context) {
@@ -167,7 +165,7 @@ YYDialog YYDialogDemo(BuildContext context) {
 }
 ```
 
-支持的功能属性
+支持的属性
 
 property|description|default
 --|--|--|
@@ -182,7 +180,7 @@ constraints|弹窗约束|最小宽高不低于10%
 animatedFunc|弹窗出现的动画|从中间出现
 barrierDismissible|是否点击弹出外部消失|true
 
-> 语义化组件
+## ⚡ Semantic Widget
 
 弹窗内部的组件内容提前通过语义化的函数封装好常用的组件，以便快速构建出弹窗，具体见下表
 
@@ -234,6 +232,10 @@ listViewOfRadioButton|列表按钮组件
 divider|分割线组件
 height|弹窗高度
 widget|自定义语义化组件
+
+## ⚡ Custom Widget
+
+自定义弹窗内部组件内容
 
 * 由于当前已有的语义化组件只是辅助快速搭建UI，在实际项目开发中远远不能满足需求
 * 所以提供了自定义语义化组件的插入，由开发者自行将组件加入到弹窗内
