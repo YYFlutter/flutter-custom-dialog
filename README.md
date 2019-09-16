@@ -150,9 +150,17 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 属性的设置通过成员变量的方法去调用，具体详见下表
 
 ```dart
-YYDialog YYAlertDialogWithDivider(BuildContext context) {
+YYDialog YYDialogDemo(BuildContext context) {
   return YYDialog().build(context)
     ..width = 220
+    ..height = 500
+    ..barrierColor = Colors.black.withOpacity(.3)
+    ..animatedFunc = (child, animation) {
+      return ScaleTransition(
+        child: child,
+        scale: Tween(begin: 0.0, end: 1.0).animate(animation),
+      );
+    }
     ..borderRadius = 4.0
     ..show();
 }
@@ -226,7 +234,7 @@ divider|分割线组件
 height|弹窗高度
 widget|自定义语义化组件
 
-由于组件提供只是辅助快速搭建UI，在实际项目开发中远远不能满足需求，所以提供了自定义语义化组件的插入
+当前语义化组件的提供只是辅助快速搭建UI，在实际项目开发中远远不能满足需求，所以提供了自定义语义化组件的插入，由开发者自行加入组件到弹窗内
 
 > 例如：text语义化组件
 
