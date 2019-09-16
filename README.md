@@ -139,7 +139,7 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       <br />
       customIn
       <br />
-      ✅
+      ✅ 支持自定义动画
     </td>
   </tr>
 </table>
@@ -240,7 +240,7 @@ widget|自定义语义化组件
 * 由于当前已有的语义化组件只是辅助快速搭建UI，在实际项目开发中远远不能满足需求
 * 所以提供了自定义语义化组件的插入，由开发者自行将组件加入到弹窗内
 
-> 例如
+> 通过`widget()`将组件插入弹窗
 
 ```dart
 YYDialog YYDialogDemo(BuildContext context) {
