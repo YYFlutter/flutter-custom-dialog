@@ -29,23 +29,37 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/efoxTeam/flutter-animation-set/raw/master/image/gif/18.gif" width="150px">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/1.png" width="150px">
       <br />
       body
       <br />
       ✅
     </td>
     <td align="center">
-      <img src="https://github.com/efoxTeam/flutter-animation-set/raw/master/image/gif/19.gif" width="150px">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/2.png" width="150px">
       <br />
       head
       <br />
       ✅
     </td>
     <td align="center">
-      <img src="https://github.com/efoxTeam/flutter-animation-set/raw/master/image/gif/20.gif" width="150px">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/3.png" width="150px">
       <br />
       divider
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/4.png" width="150px">
+      <br />
+      listTile
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/5.png" width="150px">
+      <br />
+      ListRadio
       <br />
       ✅
     </td>
