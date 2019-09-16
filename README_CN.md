@@ -2,13 +2,11 @@
 
 [![pub package](https://img.shields.io/pub/v/flutter_custom_dialog.svg)](https://pub.dev/packages/flutter_custom_dialog)
 
-**[Lanuage ~~]** [English](README.md) | [中文文档](README_CN.md)
+对全局弹窗的功能封装，用语义化的方式对弹窗内部的内容进行填充，目前提供的功能
 
-Global dialog function encapsulation, with a semantic way to fill the content inside the dialog, the current function provided
-
-1. Support for a few semantic component methods to populate the component content inside dialog
-2. Support for customizing semantic components for developers to freely populate component content inside dialog
-3. Support setting dialog background color, foreground color, position, animation, click the external disappear and other functions, see the details below
+1. 支持少数语义化组件的方法，填充弹窗内部的组件内容
+2. 支持自定义语义化组件的方法，供开发者自由填充弹窗内部的组件内容
+3. 支持设置弹窗背景色、前景色、位置、动画、点击外部消失等功能，具体看下文
 
 ## 🎖 Installing
 
@@ -141,14 +139,14 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       <br />
       customIn
       <br />
-      ✅ Support for custom animations
+      ✅ 支持自定义动画
     </td>
   </tr>
 </table>
 
 ## ⚡ Dialog Property
 
-dialog property Settings can be called through the method of member variables, as detailed in the following table
+弹窗的属性设置可以通过成员变量的方法去调用，具体详见下表
 
 ```dart
 YYDialog YYDialogDemo(BuildContext context) {
@@ -167,24 +165,24 @@ YYDialog YYDialogDemo(BuildContext context) {
 }
 ```
 
-Supported attributes
+支持的属性
 
 property|description|default
 --|--|--|
-width|Dialog width|0
-height|Dialog height|Adaptive component height
-duration|Dialog animation time|250 ms
-gravity|Where the dialog appears|center
-barrierColor|Dialog barrierColor|30% of black
-backgroundColor|Dialog backgroundColor|white
-borderRadius|Dialog borderRadius|0.0
-constraints|Dialog constraints|Minimum width and height not less than 10%
-animatedFunc|Animation of dialog|Emerge from the middle
-barrierDismissible|Whether to click to pop up the external disappear|true
+width|弹窗宽度|0
+height|弹窗高度|自适应组件高度
+duration|弹窗动画出现的时间|250毫秒
+gravity|弹窗出现的位置|居中
+barrierColor|弹窗外的背景色|30%黑色
+backgroundColor|弹窗内的背景色|白色
+borderRadius|弹窗圆角|0.0
+constraints|弹窗约束|最小宽高不低于10%
+animatedFunc|弹窗出现的动画|从中间出现
+barrierDismissible|是否点击弹出外部消失|true
 
 ## ⚡ Semantic Widget
 
-The contents of the components inside the dialog are encapsulated by semantic functions in advance to quickly build the dialog, as shown in the following table
+弹窗内部的组件内容提前通过语义化的函数封装好常用的组件，以便快速构建出弹窗，具体见下表
 
 ```dart
 YYDialog YYAlertDialogWithDivider(BuildContext context) {
@@ -223,25 +221,25 @@ YYDialog YYAlertDialogWithDivider(BuildContext context) {
 }
 ```
 
-Semantic components supported
+支持的语义化组件
 
 method|description
 --|--|
-text|text widget
-doubleButton|two-button widget
-listViewOfListTile|listTile widget
-listViewOfRadioButton|listRadio widget
-divider|divider widget
-widget|custom semantic widget
+text|文本控件
+doubleButton|双按钮控件
+listViewOfListTile|列表Tile组件
+listViewOfRadioButton|列表按钮组件
+divider|分割线组件
+widget|自定义语义化组件
 
 ## ⚡ Custom Widget
 
-Customize dialog interior component content
+自定义弹窗内部组件内容
 
-* Since the existing semantic components only assist in the rapid UI construction, they are far from meeting the requirements in actual project development
-* So it provides the ability to insert custom semantic components into dialog
+* 由于当前已有的语义化组件只是辅助快速搭建UI，在实际项目开发中远远不能满足需求
+* 所以提供了自定义语义化组件的插入，由开发者自行将组件加入到弹窗内
 
-> Insert the component into the dialog through 'widget()'
+> 通过`widget()`将组件插入弹窗
 
 ```dart
 YYDialog YYDialogDemo(BuildContext context) {
