@@ -84,10 +84,16 @@ YYDialog YYAlertDialogWithDivider(BuildContext context) {
       color1: Colors.redAccent,
       fontSize1: 14.0,
       fontWeight1: FontWeight.bold,
+      onTap1: () {
+        print("取消");
+      },
       text2: "确定",
       color2: Colors.redAccent,
       fontSize2: 14.0,
       fontWeight2: FontWeight.bold,
+      onTap2: () {
+        print("确定");
+      },
     )
     ..show();
 }

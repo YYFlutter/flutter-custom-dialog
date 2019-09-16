@@ -31,21 +31,21 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
     <td align="center">
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/1.png" width="150px">
       <br />
-      body
+      divider
       <br />
       ✅
     </td>
     <td align="center">
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/2.png" width="150px">
       <br />
-      head
+      body
       <br />
       ✅
     </td>
     <td align="center">
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/3.png" width="150px">
       <br />
-      divider
+      head&body
       <br />
       ✅
     </td>
@@ -145,11 +145,111 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 **3、use**
 
-> 弹窗支持功能
+> 功能属性的设置
 
+属性的设置通过成员变量的方法去调用，具体详见下表
 
+```dart
+YYDialog YYAlertDialogWithDivider(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 220
+    ..borderRadius = 4.0
+    ..show();
+}
+```
+
+支持的功能属性
+
+property|description|default
+--|--|--|
+width|弹窗宽度|0
+height|弹窗高度|自适应组件高度
+duration|弹窗动画出现的时间|250毫秒
+gravity|弹窗出现的位置|居中
+barrierColor|弹窗外的背景色|30%黑色
+backgroundColor|弹窗内的背景色|白色
+borderRadius|弹窗圆角|0.0
+constraints|弹窗约束|最小宽高不低于10%
+animatedFunc|弹窗出现的动画|从中间出现
+barrierDismissible|是否点击弹出外部消失|true
 
 > 语义化组件
+
+弹窗内部的组件内容提前通过语义化的函数封装好常用的组件，以便快速构建出弹窗，具体见下表
+
+```dart
+YYDialog YYAlertDialogWithDivider(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 220
+    ..borderRadius = 4.0
+    ..text(
+      padding: EdgeInsets.all(25.0),
+      alignment: Alignment.center,
+      text: "确定要退出登录吗?",
+      color: Colors.black,
+      fontSize: 14.0,
+      fontWeight: FontWeight.w500,
+    )
+    ..divider()
+    ..doubleButton(
+      padding: EdgeInsets.only(top: 10.0),
+      gravity: Gravity.center,
+      withDivider: true,
+      text1: "取消",
+      color1: Colors.redAccent,
+      fontSize1: 14.0,
+      fontWeight1: FontWeight.bold,
+      onTap1: () {
+        print("取消");
+      },
+      text2: "确定",
+      color2: Colors.redAccent,
+      fontSize2: 14.0,
+      fontWeight2: FontWeight.bold,
+      onTap2: () {
+        print("确定");
+      },
+    )
+    ..show();
+}
+```
+
+支持的语义化组件
+
+method|description
+--|--|
+text|文本控件
+doubleButton|双按钮控件
+listViewOfListTile|列表Tile组件
+listViewOfRadioButton|列表按钮组件
+divider|分割线组件
+height|弹窗高度
+widget|自定义语义化组件
+
+由于组件提供只是辅助快速搭建UI，在实际项目开发中远远不能满足需求，所以提供了自定义语义化组件的插入
+
+> 例如：text语义化组件
+
+```dart
+YYDialog text({padding, text, color, fontSize, alignment, fontWeight}) {
+  return this.widget(
+    Padding(
+      padding: padding ?? EdgeInsets.all(0.0),
+      child: Align(
+        alignment: alignment ?? Alignment.centerLeft,
+        child: Text(
+          text ?? "",
+          style: TextStyle(
+            color: color ?? Colors.black,
+            fontSize: fontSize ?? 14.0,
+            fontWeight: fontWeight,
+          ),
+        ),
+      ),
+    ),
+  );
+}
+```
 
 ## Bugs/Requests
 

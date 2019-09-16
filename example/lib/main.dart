@@ -49,7 +49,7 @@ showAlertDialog(BuildContext context) {
             makeTextButton("body", () {
               YYAlertDialogBody(context);
             }),
-            makeTextButton("head", () {
+            makeTextButton("head&body", () {
               YYAlertDialogHeadAndBody(context);
             }),
             makeTextButton("divider", () {
