@@ -411,3 +411,34 @@ YYDialog YYAlertDialogWithCustomIn(BuildContext context) {
     )
     ..show();
 }
+
+YYDialog YYDialogDemo(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 220
+    ..height = 500
+    ..barrierColor = Colors.black.withOpacity(.3)
+    ..animatedFunc = (child, animation) {
+      return ScaleTransition(
+        child: child,
+        scale: Tween(begin: 0.0, end: 1.0).animate(animation),
+      );
+    }
+    ..borderRadius = 4.0
+    ..widget(
+      Padding(
+        padding: EdgeInsets.all(0.0),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 14.0,
+              fontWeight: FontWeight.w100,
+            ),
+          ),
+        ),
+      ),
+    )
+    ..show();
+}
