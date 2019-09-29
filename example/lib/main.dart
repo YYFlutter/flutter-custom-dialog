@@ -66,7 +66,10 @@ showAlertDialog(BuildContext context) {
               YYAlertDialogWithDuration(context);
             }),
             makeTextButton("barrier\ncolor", () {
-              YYAlertDialogWithbarrierColor(context);
+              YYAlertDialogWithbarrierColor(context, Colors.redAccent);
+            }),
+            makeTextButton("transparent\ncolor", () {
+              YYAlertDialogWithbarrierColor(context, Colors.transparent);
             }),
             makeTextButton("background\ncolor", () {
               YYAlertDialogWithBackgroundColor(context);
@@ -114,6 +117,38 @@ showAlertDialog(BuildContext context) {
             }),
           ],
         ),
+        Row(
+          children: <Widget>[
+            makeTextButton("left\nbottom", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.leftBottom,
+              );
+            }),
+            makeTextButton("left\ntop", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.leftTop,
+              );
+            }),
+            makeTextButton("right\nbottom", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.rightBottom,
+              );
+            }),
+            makeTextButton("right\ntop", () {
+              YYAlertDialogWithGravity(
+                context: context,
+                width: 250.0,
+                gravity: Gravity.rightTop,
+              );
+            }),
+          ],
+        ),
         Text("4、double button gravity"),
         Row(
           children: <Widget>[
@@ -154,6 +189,14 @@ showAlertDialog(BuildContext context) {
             }),
             makeTextButton("customIn", () {
               YYAlertDialogWithCustomIn(context);
+            }),
+          ],
+        ),
+        Text("6、projects using"),
+        Row(
+          children: <Widget>[
+            makeTextButton("pop\nmenu", () {
+              YYAlertDialogPopMenu(context);
             }),
           ],
         ),

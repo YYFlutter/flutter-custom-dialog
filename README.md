@@ -109,6 +109,36 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       ✅
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/111.gif" width="150px">
+      <br />
+      left bottom
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/222.gif" width="150px">
+      <br />
+      left top
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/333.gif" width="150px">
+      <br />
+      right bottom
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/444.gif" width="150px">
+      <br />
+      right top
+      <br />
+      ✅
+    </td>
+  </tr>
 </table>
 
 > dialog_animation
@@ -175,6 +205,7 @@ width|Dialog width|0
 height|Dialog height|Adaptive component height
 duration|Dialog animation time|250 ms
 gravity|Where the dialog appears|center
+margin|The margin of a dialog|EdgeInsets.all(0.0)
 barrierColor|Dialog barrierColor|30% of black
 backgroundColor|Dialog backgroundColor|white
 borderRadius|Dialog borderRadius|0.0

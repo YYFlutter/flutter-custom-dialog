@@ -129,11 +129,11 @@ YYDialog YYAlertDialogWithDuration(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithbarrierColor(BuildContext context) {
+YYDialog YYAlertDialogWithbarrierColor(BuildContext context, Color color) {
   return YYDialog().build(context)
     ..width = 240
     ..borderRadius = 4.0
-    ..barrierColor = Colors.redAccent
+    ..barrierColor = color
     ..text(
       padding: EdgeInsets.all(18.0),
       text: "Dialog header",
@@ -439,6 +439,28 @@ YYDialog YYDialogDemo(BuildContext context) {
           ),
         ),
       ),
+    )
+    ..show();
+}
+
+YYDialog YYAlertDialogPopMenu(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 120
+    ..borderRadius = 8.0
+    ..gravity = Gravity.rightTop
+    ..barrierColor = Colors.transparent
+    ..margin = EdgeInsets.only(top: 80, right: 20)
+    ..text(
+      padding: EdgeInsets.fromLTRB(10.0,16.0,10.0,16.0),
+      text: "Edit Libary",
+      fontSize: 16.0,
+      color: Colors.grey[700],
+    )
+    ..text(
+      padding:EdgeInsets.fromLTRB(10.0,16.0,10.0,16.0),
+      text: "Read History",
+      fontSize: 16.0,
+      color: Color(0xFFFF6B2D),
     )
     ..show();
 }

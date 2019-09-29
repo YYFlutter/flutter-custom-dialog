@@ -21,6 +21,7 @@ class YYDialog {
   BoxConstraints constraints; //弹窗约束
   Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
+  EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
 
   get isShowing => _isShowing; //当前弹窗是否可见
   bool _isShowing = false;
@@ -224,35 +225,38 @@ class YYDialog {
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
       duration: duration,
-      child: Column(
-        textDirection: TextDirection.ltr,
-        mainAxisAlignment: mainAxisAlignment,
-        crossAxisAlignment: crossAxisAlignment,
-        children: <Widget>[
-          Material(
-            type: MaterialType.transparency,
-            child: Container(
-              padding: EdgeInsets.all(borderRadius / 3.14),
-              width: width ?? null,
-              height: height ?? null,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(borderRadius),
-                color: backgroundColor,
+      child: Padding(
+        padding: margin,
+        child: Column(
+          textDirection: TextDirection.ltr,
+          mainAxisAlignment: mainAxisAlignment,
+          crossAxisAlignment: crossAxisAlignment,
+          children: <Widget>[
+            Material(
+              type: MaterialType.transparency,
+              child: Container(
+                padding: EdgeInsets.all(borderRadius / 3.14),
+                width: width ?? null,
+                height: height ?? null,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(borderRadius),
+                  color: backgroundColor,
+                ),
+                constraints: constraints ??
+                    BoxConstraints(
+                      minHeight: size.height * .1,
+                      minWidth: size.width * .1,
+                    ),
+                child: CustomDialogChildren(
+                  widgetList: widgetList,
+                  isShowingChange: (bool isShowingChange) {
+                    _isShowing = isShowingChange;
+                  },
+                ),
               ),
-              constraints: constraints ??
-                  BoxConstraints(
-                    minHeight: size.height * .1,
-                    minWidth: size.width * .1,
-                  ),
-              child: CustomDialogChildren(
-                widgetList: widgetList,
-                isShowingChange: (bool isShowingChange) {
-                  _isShowing = isShowingChange;
-                },
-              ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
@@ -267,9 +271,13 @@ class YYDialog {
     var mainAxisAlignment = MainAxisAlignment.start;
     switch (gravity) {
       case Gravity.bottom:
+      case Gravity.leftBottom:
+      case Gravity.rightBottom:
         mainAxisAlignment = MainAxisAlignment.end;
         break;
       case Gravity.top:
+      case Gravity.leftTop:
+      case Gravity.rightTop:
         mainAxisAlignment = MainAxisAlignment.start;
         break;
       case Gravity.left:
@@ -294,9 +302,13 @@ class YYDialog {
       case Gravity.top:
         break;
       case Gravity.left:
+      case Gravity.leftTop:
+      case Gravity.leftBottom:
         crossAxisAlignment = CrossAxisAlignment.start;
         break;
       case Gravity.right:
+      case Gravity.rightTop:
+      case Gravity.rightBottom:
         crossAxisAlignment = CrossAxisAlignment.end;
         break;
       default:
@@ -386,6 +398,11 @@ class CustomDialog {
   }
 
   show() {
+    //fix transparent error
+    if (_barrierColor == Colors.transparent) {
+      _barrierColor = Colors.white.withOpacity(0.0);
+    }
+
     showGeneralDialog(
       context: _context,
       barrierColor: _barrierColor ?? Colors.black.withOpacity(.3),
@@ -414,6 +431,8 @@ class CustomDialog {
     Animation<Offset> custom;
     switch (_gravity) {
       case Gravity.top:
+      case Gravity.leftTop:
+      case Gravity.rightTop:
         custom = Tween<Offset>(
           begin: Offset(0.0, -1.0),
           end: Offset(0.0, 0.0),
@@ -432,6 +451,8 @@ class CustomDialog {
         ).animate(animation);
         break;
       case Gravity.bottom:
+      case Gravity.leftBottom:
+      case Gravity.rightBottom:
         custom = Tween<Offset>(
           begin: Offset(0.0, 1.0),
           end: Offset(0.0, 0.0),

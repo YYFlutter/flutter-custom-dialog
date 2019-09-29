@@ -107,6 +107,36 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       ✅
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/111.gif" width="150px">
+      <br />
+      left bottom
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/222.gif" width="150px">
+      <br />
+      left top
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/333.gif" width="150px">
+      <br />
+      right bottom
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/gif/444.gif" width="150px">
+      <br />
+      right top
+      <br />
+      ✅
+    </td>
+  </tr>
 </table>
 
 > dialog_animation
@@ -173,6 +203,7 @@ width|弹窗宽度|0
 height|弹窗高度|自适应组件高度
 duration|弹窗动画出现的时间|250毫秒
 gravity|弹窗出现的位置|居中
+margin|弹窗的外边距|EdgeInsets.all(0.0)
 barrierColor|弹窗外的背景色|30%黑色
 backgroundColor|弹窗内的背景色|白色
 borderRadius|弹窗圆角|0.0

@@ -6,4 +6,8 @@ enum Gravity {
   bottom,
   right,
   center,
+  rightTop,
+  leftTop,
+  rightBottom,
+  leftBottom,
 }
