@@ -4,6 +4,8 @@ import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 import 'components/bean/dialog_gravity.dart';
 import 'flutter_custom_dialog_widget.dart';
 
+export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
+
 class YYDialog {
   //================================弹窗属性======================================
   List<Widget> widgetList = []; //弹窗内部所有组件

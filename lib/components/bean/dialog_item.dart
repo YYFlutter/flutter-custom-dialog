@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+export 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
+
 class ListTileItem {
   ListTileItem({
     this.padding,
