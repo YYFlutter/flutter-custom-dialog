@@ -185,7 +185,7 @@ barrierDismissible|Whether to click to pop up the external disappear|true
 Supported method
 
 method|description
---|--|--|
+--|--|
 show|show dialog
 dismiss|dismiss dialog
 isShowing|Is the dialog showing

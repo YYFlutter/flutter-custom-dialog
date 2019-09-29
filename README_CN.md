@@ -183,7 +183,7 @@ barrierDismissible|是否点击弹出外部消失|true
 支持的方法
 
 method|description
---|--|--|
+--|--|
 show|显示弹窗
 dismiss|隐藏弹窗
 isShowing|弹窗是否在展示
