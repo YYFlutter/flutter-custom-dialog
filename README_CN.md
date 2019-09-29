@@ -226,6 +226,7 @@ width|弹窗宽度|0
 height|弹窗高度|自适应组件高度
 duration|弹窗动画出现的时间|250毫秒
 gravity|弹窗出现的位置|居中
+gravityAnimationEnable|弹窗出现的位置带有的默认动画是否可用|false
 margin|弹窗的外边距|EdgeInsets.all(0.0)
 barrierColor|弹窗外的背景色|30%黑色
 backgroundColor|弹窗内的背景色|白色

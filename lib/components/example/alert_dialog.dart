@@ -102,6 +102,7 @@ YYDialog YYAlertDialogWithDuration(BuildContext context) {
   return YYDialog().build(context)
     ..width = 240
     ..borderRadius = 4.0
+    ..gravityAnimationEnable = true
     ..gravity = Gravity.left
     ..duration = Duration(seconds: 1)
     ..text(
@@ -224,6 +225,7 @@ YYDialog YYAlertDialogWithGravity(
   return YYDialog().build(context)
     ..width = width
     ..gravity = gravity
+    ..gravityAnimationEnable = true
     ..borderRadius = 4.0
     ..text(
       padding: EdgeInsets.all(18.0),
@@ -451,16 +453,36 @@ YYDialog YYAlertDialogPopMenu(BuildContext context) {
     ..barrierColor = Colors.transparent
     ..margin = EdgeInsets.only(top: 80, right: 20)
     ..text(
-      padding: EdgeInsets.fromLTRB(10.0,16.0,10.0,16.0),
+      padding: EdgeInsets.fromLTRB(10.0, 16.0, 10.0, 16.0),
       text: "Edit Libary",
       fontSize: 16.0,
       color: Colors.grey[700],
     )
     ..text(
-      padding:EdgeInsets.fromLTRB(10.0,16.0,10.0,16.0),
+      padding: EdgeInsets.fromLTRB(10.0, 16.0, 10.0, 16.0),
       text: "Read History",
       fontSize: 16.0,
       color: Color(0xFFFF6B2D),
     )
     ..show();
+}
+
+YYDialog YYAlertDialogCustomXY(BuildContext context) {
+  return YYDialog().build(context)
+    ..width = 120
+    ..borderRadius = 8.0
+    ..barrierColor = Colors.transparent
+    ..text(
+      padding: EdgeInsets.fromLTRB(10.0, 16.0, 10.0, 16.0),
+      text: "Edit Libary",
+      fontSize: 16.0,
+      color: Colors.grey[700],
+    )
+    ..text(
+      padding: EdgeInsets.fromLTRB(10.0, 16.0, 10.0, 16.0),
+      text: "Read History",
+      fontSize: 16.0,
+      color: Color(0xFFFF6B2D),
+    )
+    ..show(80.0, 100.0);
 }

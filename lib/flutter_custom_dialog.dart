@@ -15,6 +15,7 @@ class YYDialog {
   double height; //弹窗高度
   Duration duration = Duration(milliseconds: 250); //弹窗动画出现的时间
   Gravity gravity = Gravity.center; //弹窗出现的位置
+  bool gravityAnimationEnable = false; //弹窗出现的位置带有的默认动画是否可用
   Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
   Color backgroundColor = Colors.white; //弹窗内的背景色
   double borderRadius = 0.0; //弹窗圆角
@@ -214,12 +215,19 @@ class YYDialog {
     );
   }
 
-  void show() {
+  ///  x坐标
+  ///  y坐标
+  void show([x, y]) {
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
     Size size = MediaQuery.of(context).size;
+    if (x != null && y != null) {
+      gravity = Gravity.leftTop;
+      margin = EdgeInsets.only(left: x, top: y);
+    }
     CustomDialog(
       gravity: gravity,
+      gravityAnimationEnable: gravityAnimationEnable,
       context: context,
       barrierColor: barrierColor,
       animatedFunc: animatedFunc,
@@ -375,6 +383,7 @@ class CustomDialog {
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible;
   Gravity _gravity;
+  bool _gravityAnimationEnable;
   Function _animatedFunc;
 
   CustomDialog({
@@ -384,11 +393,13 @@ class CustomDialog {
     Color barrierColor,
     RouteTransitionsBuilder transitionsBuilder,
     Gravity gravity,
+    bool gravityAnimationEnable,
     Function animatedFunc,
     bool barrierDismissible,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
+        _gravityAnimationEnable = gravityAnimationEnable,
         _duration = duration,
         _barrierColor = barrierColor,
         _animatedFunc = animatedFunc,
@@ -467,8 +478,17 @@ class CustomDialog {
         break;
     }
 
+    //自定义动画
     if (_animatedFunc != null) {
       return _animatedFunc(child, animation);
+    }
+
+    //不需要默认动画
+    if (!_gravityAnimationEnable) {
+      custom = Tween<Offset>(
+        begin: Offset(0.0, 0.0),
+        end: Offset(0.0, 0.0),
+      ).animate(animation);
     }
 
     return SlideTransition(

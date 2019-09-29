@@ -228,6 +228,7 @@ width|Dialog width|0
 height|Dialog height|Adaptive component height
 duration|Dialog animation time|250 ms
 gravity|Where the dialog appears|center
+gravityAnimationEnable|The dialog appears with the default animation available|false
 margin|The margin of a dialog|EdgeInsets.all(0.0)
 barrierColor|Dialog barrierColor|30% of black
 backgroundColor|Dialog backgroundColor|white

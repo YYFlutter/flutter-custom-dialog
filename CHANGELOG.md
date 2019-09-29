@@ -10,3 +10,7 @@
 ## 1.0.2
 
 * add gravity of leftTop,leftBottom,rightTop,rightBottom
+
+## 1.0.3
+
+* add gravityAnimationEnable property

@@ -74,6 +74,9 @@ showAlertDialog(BuildContext context) {
             makeTextButton("pop\nmenu", () {
               YYAlertDialogPopMenu(context);
             }),
+            makeTextButton("custom\nx&y", () {
+              YYAlertDialogCustomXY(context);
+            }),
           ],
         ),
         Text("2、dialog property"),
@@ -231,6 +234,9 @@ showDevelopDialog(BuildContext context) {
                 context,
                 MaterialPageRoute(
                     builder: (context) => Scaffold(
+                          appBar: AppBar(
+                            title: Text("fix dismiss bug"),
+                          ),
                           body: Column(
                             children: <Widget>[
                               makeTextButton("show", () {
