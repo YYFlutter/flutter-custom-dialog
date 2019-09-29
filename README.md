@@ -87,7 +87,7 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       <br />
       pop menu
       <br />
-      ✅ Support for display in custom locations
+      ✅ Support for custom locations
     </td>
   </tr>
 </table>
