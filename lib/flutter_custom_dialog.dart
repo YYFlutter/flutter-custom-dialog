@@ -19,6 +19,10 @@ class YYDialog {
   BoxConstraints constraints; //弹窗约束
   Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
+
+  get isShowing => _isShowing; //当前弹窗是否可见
+  bool _isShowing = false;
+
   //============================================================================
 
   YYDialog build(context) {
@@ -168,7 +172,6 @@ class YYDialog {
     Color activeColor,
     Function(int) onClickItemListener,
   }) {
-    print("YYDialog ==> listViewOfRadioButton()");
     Size size = MediaQuery.of(context).size;
     return this.widget(
       Container(
@@ -239,8 +242,11 @@ class YYDialog {
                     minHeight: size.height * .1,
                     minWidth: size.width * .1,
                   ),
-              child: Column(
-                children: widgetList,
+              child: CustomDialogChildren(
+                widgetList: widgetList,
+                isShowingChange: (bool isShowingChange) {
+                  _isShowing = isShowingChange;
+                },
               ),
             ),
           )
@@ -250,7 +256,9 @@ class YYDialog {
   }
 
   void dismiss() {
-    Navigator.of(context).pop();
+    if (_isShowing) {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
   }
 
   getColumnMainAxisAlignment(gravity) {
@@ -317,6 +325,34 @@ class YYDialog {
   }
 }
 
+///弹窗的内容作为可变组件
+class CustomDialogChildren extends StatefulWidget {
+  List<Widget> widgetList = []; //弹窗内部所有组件
+  Function(bool) isShowingChange;
+
+  CustomDialogChildren({this.widgetList, this.isShowingChange});
+
+  @override
+  CustomDialogChildState createState() => CustomDialogChildState();
+}
+
+class CustomDialogChildState extends State<CustomDialogChildren> {
+  @override
+  Widget build(BuildContext context) {
+    widget.isShowingChange(true);
+    return Column(
+      children: widget.widgetList,
+    );
+  }
+
+  @override
+  void dispose() {
+    widget.isShowingChange(false);
+    super.dispose();
+  }
+}
+
+///弹窗API的封装
 class CustomDialog {
   BuildContext _context;
   Widget _child;

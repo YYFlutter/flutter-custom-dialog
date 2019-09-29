@@ -16,7 +16,7 @@ Global dialog function encapsulation, with a semantic way to fill the content in
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.0
+  flutter_custom_dialog: ^1.0.1
 ```
 
 **2、import**
@@ -181,6 +181,14 @@ borderRadius|Dialog borderRadius|0.0
 constraints|Dialog constraints|Minimum width and height not less than 10%
 animatedFunc|Animation of dialog|Emerge from the middle
 barrierDismissible|Whether to click to pop up the external disappear|true
+
+Supported method
+
+method|description
+--|--|--|
+show|show dialog
+dismiss|dismiss dialog
+isShowing|Is the dialog showing
 
 ## ⚡ Semantic Widget
 

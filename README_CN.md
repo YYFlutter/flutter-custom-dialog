@@ -14,7 +14,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.0
+  flutter_custom_dialog: ^1.0.1
 ```
 
 **2、import**
@@ -179,6 +179,14 @@ borderRadius|弹窗圆角|0.0
 constraints|弹窗约束|最小宽高不低于10%
 animatedFunc|弹窗出现的动画|从中间出现
 barrierDismissible|是否点击弹出外部消失|true
+
+支持的方法
+
+method|description
+--|--|--|
+show|显示弹窗
+dismiss|隐藏弹窗
+isShowing|弹窗是否在展示
 
 ## ⚡ Semantic Widget
 
