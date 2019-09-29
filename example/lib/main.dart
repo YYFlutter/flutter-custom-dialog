@@ -223,7 +223,7 @@ showDevelopDialog(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text("YYDevelopDialog", style: titleTextStyle),
-        Text("1、Debug"),
+        Text("1、debug"),
         Row(
           children: <Widget>[
             makeTextButton("fix dismiss\nbug in v1.0.1", () {
