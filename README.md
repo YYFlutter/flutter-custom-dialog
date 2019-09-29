@@ -16,7 +16,7 @@ Global dialog function encapsulation, with a semantic way to fill the content in
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.2
+  flutter_custom_dialog: ^1.0.3
 ```
 
 **2、import**
