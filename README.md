@@ -67,6 +67,29 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       ✅
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/6.png" width="150px">
+      <br />
+      progress
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/7.png" width="150px">
+      <br />
+      progress&body
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/8.png" width="150px">
+      <br />
+      pop menu
+      <br />
+      ✅
+    </td>
+  </tr>
 </table>
 
 > dialog_gravity
