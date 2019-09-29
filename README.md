@@ -241,7 +241,7 @@ Supported method
 
 method|description
 --|--|
-show|show dialog
+show[x,y]|show dialog
 dismiss|dismiss dialog
 isShowing|Is the dialog showing
 
