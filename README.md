@@ -332,7 +332,7 @@ YYDialog YYDialogDemo(BuildContext context) {
 }
 ```
 
-## Without the Context to invoke
+## ⚡ Without the Context to invoke
 
 * Application scenario: after the network request comes back, there is no Context to refer to in the callback, at this time, the Context needs to be initialized in advance, and then the dialog can be called without the Context
 
@@ -343,9 +343,9 @@ Call static methods before show dialog `YYDialog.init(context);`
 ```dart
 class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
-    //1、初始化context
+    //1、init context
     YYDialog.init(context);
-    //2、后续使用可以不需要context
+    //2、Subsequent use may not be required context
     ......
   }
 }

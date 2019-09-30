@@ -330,7 +330,7 @@ YYDialog YYDialogDemo(BuildContext context) {
 }
 ```
 
-## 无Context调用
+## ⚡ 无Context调用
 
 * 应用场景：在网络请求回来后，在回调中是无Context可以引用，这时候就需要预先初始化Context，后续就可以不需要Context调用弹窗
 
