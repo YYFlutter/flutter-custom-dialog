@@ -9,6 +9,7 @@ Global dialog function encapsulation, with a semantic way to fill the content in
 1. Support for a few semantic component methods to populate the component content inside dialog
 2. Support for customizing semantic components for developers to freely populate component content inside dialog
 3. Support setting dialog background color, foreground color, position, animation, click the external disappear and other functions, see the details below
+4. Support no Context call dialog, see below
 
 ## 🎖 Installing
 
@@ -326,6 +327,41 @@ YYDialog YYDialogDemo(BuildContext context) {
           ),
         ),
       ),
+    )
+    ..show();
+}
+```
+
+## Without the Context to invoke
+
+* Application scenario: after the network request comes back, there is no Context to refer to in the callback, at this time, the Context needs to be initialized in advance, and then the dialog can be called without the Context
+
+**1、init**
+
+Call static methods before show dialog `YYDialog.init(context);`
+
+```dart
+class AppHome extends StatelessWidget {
+  Widget build(BuildContext context) {
+    //1、初始化context
+    YYDialog.init(context);
+    //2、后续使用可以不需要context
+    ......
+  }
+}
+```
+
+**2、use**
+
+direct use `YYDialog`，Note that it must be called `build()`
+
+```dart
+YYDialog YYAlertDialogBody() {
+  return YYDialog().build()
+    ..width = 240
+    ..text(
+      text: "Hello YYDialog",
+      color: Colors.grey[700],
     )
     ..show();
 }

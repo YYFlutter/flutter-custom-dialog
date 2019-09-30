@@ -14,3 +14,7 @@
 ## 1.0.3
 
 * add gravityAnimationEnable property
+
+## 1.0.4
+
+* Without the Context to invoke

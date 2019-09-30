@@ -7,6 +7,7 @@
 1. 支持少数语义化组件的方法，填充弹窗内部的组件内容
 2. 支持自定义语义化组件的方法，供开发者自由填充弹窗内部的组件内容
 3. 支持设置弹窗背景色、前景色、位置、动画、点击外部消失等功能，具体看下文
+4. 支持无Context调用弹窗，具体看下文
 
 ## 🎖 Installing
 
@@ -324,6 +325,41 @@ YYDialog YYDialogDemo(BuildContext context) {
           ),
         ),
       ),
+    )
+    ..show();
+}
+```
+
+## 无Context调用
+
+* 应用场景：在网络请求回来后，在回调中是无Context可以引用，这时候就需要预先初始化Context，后续就可以不需要Context调用弹窗
+
+**1、init**
+
+在未弹窗之前先调用静态方法`YYDialog.init(context);`
+
+```dart
+class AppHome extends StatelessWidget {
+  Widget build(BuildContext context) {
+    //1、初始化context
+    YYDialog.init(context);
+    //2、后续使用可以不需要context
+    ......
+  }
+}
+```
+
+**2、use**
+
+直接使用`YYDialog`，注意必须要调用`build()`
+
+```dart
+YYDialog YYAlertDialogBody() {
+  return YYDialog().build()
+    ..width = 240
+    ..text(
+      text: "Hello YYDialog",
+      color: Colors.grey[700],
     )
     ..show();
 }
