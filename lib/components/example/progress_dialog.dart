@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
-YYDialog YYProgressDialogNoBody(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYProgressDialogNoBody() {
+  return YYDialog().build()
     ..width = 200
     ..borderRadius = 4.0
     ..circularProgress(
@@ -12,8 +12,8 @@ YYDialog YYProgressDialogNoBody(BuildContext context) {
     ..show();
 }
 
-YYDialog YYProgressDialogBody(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYProgressDialogBody() {
+  return YYDialog().build()
     ..width = 200
     ..borderRadius = 4.0
     ..circularProgress(

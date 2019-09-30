@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
-YYDialog YYAlertDialogBody(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogBody() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..text(
@@ -26,8 +26,8 @@ YYDialog YYAlertDialogBody(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogHeadAndBody(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogHeadAndBody() {
+  return YYDialog().build()
     ..width = 260
     ..borderRadius = 4.0
     ..text(
@@ -63,8 +63,8 @@ YYDialog YYAlertDialogHeadAndBody(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithDivider(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithDivider() {
+  return YYDialog().build()
     ..width = 220
     ..borderRadius = 4.0
     ..text(
@@ -98,8 +98,8 @@ YYDialog YYAlertDialogWithDivider(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithDuration(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithDuration() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..gravityAnimationEnable = true
@@ -130,8 +130,8 @@ YYDialog YYAlertDialogWithDuration(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithbarrierColor(BuildContext context, Color color) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithbarrierColor(Color color) {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..barrierColor = color
@@ -160,8 +160,8 @@ YYDialog YYAlertDialogWithbarrierColor(BuildContext context, Color color) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithBackgroundColor(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithBackgroundColor() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..backgroundColor = Colors.yellow
@@ -190,8 +190,8 @@ YYDialog YYAlertDialogWithBackgroundColor(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithBarrierDismiss(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithBarrierDismiss() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..barrierDismissible = false
@@ -220,9 +220,8 @@ YYDialog YYAlertDialogWithBarrierDismiss(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithGravity(
-    {context, width, gravity, doubleButtonGravity}) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithGravity({width, gravity, doubleButtonGravity}) {
+  return YYDialog().build()
     ..width = width
     ..gravity = gravity
     ..gravityAnimationEnable = true
@@ -254,8 +253,8 @@ YYDialog YYAlertDialogWithGravity(
     ..show();
 }
 
-YYDialog YYAlertDialogWithScaleIn(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithScaleIn() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..duration = Duration(milliseconds: 500)
@@ -290,8 +289,8 @@ YYDialog YYAlertDialogWithScaleIn(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithFadeIn(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithFadeIn() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..duration = Duration(milliseconds: 500)
@@ -326,8 +325,8 @@ YYDialog YYAlertDialogWithFadeIn(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithRotateIn(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithRotateIn() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..duration = Duration(milliseconds: 500)
@@ -362,8 +361,8 @@ YYDialog YYAlertDialogWithRotateIn(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogWithCustomIn(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogWithCustomIn() {
+  return YYDialog().build()
     ..width = 240
     ..borderRadius = 4.0
     ..duration = Duration(milliseconds: 500)
@@ -414,8 +413,8 @@ YYDialog YYAlertDialogWithCustomIn(BuildContext context) {
     ..show();
 }
 
-YYDialog YYDialogDemo(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYDialogDemo() {
+  return YYDialog().build()
     ..width = 220
     ..height = 500
     ..barrierColor = Colors.black.withOpacity(.3)
@@ -445,8 +444,8 @@ YYDialog YYDialogDemo(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogPopMenu(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogPopMenu() {
+  return YYDialog().build()
     ..width = 120
     ..borderRadius = 8.0
     ..gravity = Gravity.rightTop
@@ -467,8 +466,8 @@ YYDialog YYAlertDialogPopMenu(BuildContext context) {
     ..show();
 }
 
-YYDialog YYAlertDialogCustomXY(BuildContext context) {
-  return YYDialog().build(context)
+YYDialog YYAlertDialogCustomXY() {
+  return YYDialog().build()
     ..width = 120
     ..borderRadius = 8.0
     ..barrierColor = Colors.transparent

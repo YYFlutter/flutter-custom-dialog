@@ -1,11 +1,11 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
-import 'package:flutter_custom_dialog/components/example/alert_dialog.dart';
 import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
+import 'package:flutter_custom_dialog/components/example/alert_dialog.dart';
 import 'package:flutter_custom_dialog/components/example/listview_dialog.dart';
 import 'package:flutter_custom_dialog/components/example/progress_dialog.dart';
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,19 +23,19 @@ class MyApp extends StatelessWidget {
 /*
  * When you init App, you can Initialize YYDialog so that use YYDialog.build().show() everywhere.
  */
-
 class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
-    return YYDialog.init(
-      Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              showAlertDialog(context),
-              showDevelopDialog(context),
-            ],
-          ),
+    //1、初始化context
+    YYDialog.init(context);
+    //2、后续使用可以不需要context
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            showAlertDialog(context),
+            showDevelopDialog(context),
+          ],
         ),
       ),
     );
@@ -53,35 +53,35 @@ showAlertDialog(BuildContext context) {
         Row(
           children: <Widget>[
             makeTextButton("body", () {
-              YYAlertDialogBody(context);
+              YYAlertDialogBody();
             }),
             makeTextButton("head&body", () {
-              YYAlertDialogHeadAndBody(context);
+              YYAlertDialogHeadAndBody();
             }),
             makeTextButton("divider", () {
-              YYAlertDialogWithDivider(context);
+              YYAlertDialogWithDivider();
             }),
             makeTextButton("listTile", () {
-              YYListViewDialogListTile(context);
+              YYListViewDialogListTile();
             }),
             makeTextButton("listRadio", () {
-              YYListViewDialogListRadio(context);
+              YYListViewDialogListRadio();
             }),
           ],
         ),
         Row(
           children: <Widget>[
             makeTextButton("nobody", () {
-              YYProgressDialogNoBody(context);
+              YYProgressDialogNoBody();
             }),
             makeTextButton("body", () {
-              YYProgressDialogBody(context);
+              YYProgressDialogBody();
             }),
             makeTextButton("pop\nmenu", () {
-              YYAlertDialogPopMenu(context);
+              YYAlertDialogPopMenu();
             }),
             makeTextButton("custom\nx&y", () {
-              YYAlertDialogCustomXY(context);
+              YYAlertDialogCustomXY();
             }),
           ],
         ),
@@ -89,19 +89,19 @@ showAlertDialog(BuildContext context) {
         Row(
           children: <Widget>[
             makeTextButton("duration", () {
-              YYAlertDialogWithDuration(context);
+              YYAlertDialogWithDuration();
             }),
             makeTextButton("barrier\ncolor", () {
-              YYAlertDialogWithbarrierColor(context, Colors.redAccent);
+              YYAlertDialogWithbarrierColor(Colors.redAccent);
             }),
             makeTextButton("transparent\ncolor", () {
-              YYAlertDialogWithbarrierColor(context, Colors.transparent);
+              YYAlertDialogWithbarrierColor(Colors.transparent);
             }),
             makeTextButton("background\ncolor", () {
-              YYAlertDialogWithBackgroundColor(context);
+              YYAlertDialogWithBackgroundColor();
             }),
             makeTextButton("barrier\ndismiss", () {
-              YYAlertDialogWithBarrierDismiss(context);
+              YYAlertDialogWithBarrierDismiss();
             }),
           ],
         ),
@@ -110,33 +110,28 @@ showAlertDialog(BuildContext context) {
           children: <Widget>[
             makeTextButton("bottom", () {
               YYAlertDialogWithGravity(
-                context: context,
                 gravity: Gravity.bottom,
               );
             }),
             makeTextButton("top", () {
               YYAlertDialogWithGravity(
-                context: context,
                 gravity: Gravity.top,
               );
             }),
             makeTextButton("left", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.left,
               );
             }),
             makeTextButton("right", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.right,
               );
             }),
             makeTextButton("center", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.center,
               );
@@ -147,28 +142,24 @@ showAlertDialog(BuildContext context) {
           children: <Widget>[
             makeTextButton("left\nbottom", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.leftBottom,
               );
             }),
             makeTextButton("left\ntop", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.leftTop,
               );
             }),
             makeTextButton("right\nbottom", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.rightBottom,
               );
             }),
             makeTextButton("right\ntop", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 gravity: Gravity.rightTop,
               );
@@ -180,21 +171,18 @@ showAlertDialog(BuildContext context) {
           children: <Widget>[
             makeTextButton("left", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 doubleButtonGravity: Gravity.left,
               );
             }),
             makeTextButton("right", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 doubleButtonGravity: Gravity.right,
               );
             }),
             makeTextButton("center", () {
               YYAlertDialogWithGravity(
-                context: context,
                 width: 250.0,
                 doubleButtonGravity: Gravity.center,
               );
@@ -205,16 +193,16 @@ showAlertDialog(BuildContext context) {
         Row(
           children: <Widget>[
             makeTextButton("scaleIn", () {
-              YYAlertDialogWithScaleIn(context);
+              YYAlertDialogWithScaleIn();
             }),
             makeTextButton("fadeIn", () {
-              YYAlertDialogWithFadeIn(context);
+              YYAlertDialogWithFadeIn();
             }),
             makeTextButton("rotateIn", () {
-              YYAlertDialogWithRotateIn(context);
+              YYAlertDialogWithRotateIn();
             }),
             makeTextButton("customIn", () {
-              YYAlertDialogWithCustomIn(context);
+              YYAlertDialogWithCustomIn();
             }),
           ],
         ),
@@ -246,7 +234,7 @@ showDevelopDialog(BuildContext context) {
                           body: Column(
                             children: <Widget>[
                               makeTextButton("show", () {
-                                yyDialog = YYAlertDialogBody(context);
+                                yyDialog = YYAlertDialogBody();
                               }),
                               makeTextButton("dismiss", () {
                                 yyDialog?.dismiss();

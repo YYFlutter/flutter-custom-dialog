@@ -7,9 +7,9 @@ import 'flutter_custom_dialog_widget.dart';
 export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 class YYDialog {
-  static BuildContext _context;
   //================================弹窗属性======================================
   List<Widget> widgetList = []; //弹窗内部所有组件
+  static BuildContext _context; //弹窗上下文
   BuildContext context; //弹窗上下文
 
   double width; //弹窗宽度
@@ -29,19 +29,16 @@ class YYDialog {
   bool _isShowing = false;
 
   //============================================================================
-  static Widget init(Widget child, [BuildContext context]) {
-    return Builder(builder: (
-      context,
-    ) {
-      _context = context;
-      return child;
-    });
+  static void init(BuildContext ctx) {
+    _context = ctx;
   }
-  YYDialog build([BuildContext context]) {
-    if (context == null && _context != null) {
-      context = _context;
+
+  YYDialog build([BuildContext ctx]) {
+    if (ctx == null && _context != null) {
+      this.context = _context;
+      return this;
     }
-    this.context = context;
+    this.context = ctx;
     return this;
   }
 
@@ -231,7 +228,7 @@ class YYDialog {
   void show([x, y]) {
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(this.context).size;
     if (x != null && y != null) {
       gravity = Gravity.leftTop;
       margin = EdgeInsets.only(left: x, top: y);
@@ -239,7 +236,7 @@ class YYDialog {
     CustomDialog(
       gravity: gravity,
       gravityAnimationEnable: gravityAnimationEnable,
-      context: context,
+      context: this.context,
       barrierColor: barrierColor,
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
