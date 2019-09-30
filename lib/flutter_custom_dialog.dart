@@ -7,6 +7,7 @@ import 'flutter_custom_dialog_widget.dart';
 export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 class YYDialog {
+  static BuildContext _context;
   //================================弹窗属性======================================
   List<Widget> widgetList = []; //弹窗内部所有组件
   BuildContext context; //弹窗上下文
@@ -28,8 +29,18 @@ class YYDialog {
   bool _isShowing = false;
 
   //============================================================================
-
-  YYDialog build(context) {
+  static Widget init(Widget child, [BuildContext context]) {
+    return Builder(builder: (
+      context,
+    ) {
+      _context = context;
+      return child;
+    });
+  }
+  YYDialog build([BuildContext context]) {
+    if (context == null && _context != null) {
+      context = _context;
+    }
     this.context = context;
     return this;
   }

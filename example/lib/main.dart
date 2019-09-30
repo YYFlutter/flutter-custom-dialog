@@ -20,16 +20,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/*
+ * When you init App, you can Initialize YYDialog so that use YYDialog.build().show() everywhere.
+ */
+
 class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            showAlertDialog(context),
-            showDevelopDialog(context),
-          ],
+    return YYDialog.init(
+      Scaffold(
+        appBar: AppBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              showAlertDialog(context),
+              showDevelopDialog(context),
+            ],
+          ),
         ),
       ),
     );
