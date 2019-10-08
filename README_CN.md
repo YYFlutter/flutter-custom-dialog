@@ -239,7 +239,7 @@ margin|弹窗的外边距|EdgeInsets.all(0.0)
 barrierColor|弹窗外的背景色|30%黑色
 backgroundColor|弹窗内的背景色|白色
 borderRadius|弹窗圆角|0.0
-constraints|弹窗约束|最小宽高不低于10%
+constraints|弹窗约束|无
 animatedFunc|弹窗出现的动画|从中间出现
 barrierDismissible|是否点击弹出外部消失|true
 

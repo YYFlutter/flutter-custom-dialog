@@ -241,7 +241,7 @@ margin|The margin of a dialog|EdgeInsets.all(0.0)
 barrierColor|Dialog barrierColor|30% of black
 backgroundColor|Dialog backgroundColor|white
 borderRadius|Dialog borderRadius|0.0
-constraints|Dialog constraints|Minimum width and height not less than 10%
+constraints|Dialog constraints|no constraints
 animatedFunc|Animation of dialog|Emerge from the middle
 barrierDismissible|Whether to click to pop up the external disappear|true
 
