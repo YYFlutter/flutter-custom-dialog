@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components/bean/dialog_item.dart';
-
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 export 'package:flutter_custom_dialog/flutter_custom_dialog_widget.dart';
 
 class YYRadioListTile extends StatefulWidget {

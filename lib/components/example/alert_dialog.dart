@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 YYDialog YYAlertDialogBody() {

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/bean/dialog_item.dart';
 
-import 'components/bean/dialog_gravity.dart';
 import 'flutter_custom_dialog_widget.dart';
 
 export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
@@ -258,11 +256,7 @@ class YYDialog {
                   borderRadius: BorderRadius.circular(borderRadius),
                   color: backgroundColor,
                 ),
-                constraints: constraints ??
-                    BoxConstraints(
-                      minHeight: size.height * .1,
-                      minWidth: size.width * .1,
-                    ),
+                constraints: constraints ?? BoxConstraints(),
                 child: CustomDialogChildren(
                   widgetList: widgetList,
                   isShowingChange: (bool isShowingChange) {
@@ -505,3 +499,55 @@ class CustomDialog {
     );
   }
 }
+
+//================================弹窗重心======================================
+enum Gravity {
+  left,
+  top,
+  bottom,
+  right,
+  center,
+  rightTop,
+  leftTop,
+  rightBottom,
+  leftBottom,
+}
+//============================================================================
+
+//================================弹窗实体======================================
+class ListTileItem {
+  ListTileItem({
+    this.padding,
+    this.leading,
+    this.text,
+    this.color,
+    this.fontSize,
+    this.fontWeight,
+  });
+
+  EdgeInsets padding;
+  Widget leading;
+  String text;
+  Color color;
+  double fontSize;
+  FontWeight fontWeight;
+}
+
+class RadioItem {
+  RadioItem({
+    this.padding,
+    this.text,
+    this.color,
+    this.fontSize,
+    this.fontWeight,
+    this.onTap,
+  });
+
+  EdgeInsets padding;
+  String text;
+  Color color;
+  double fontSize;
+  FontWeight fontWeight;
+  Function(int) onTap;
+}
+//============================================================================

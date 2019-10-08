@@ -1,8 +1,8 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/bean/dialog_gravity.dart';
 import 'package:flutter_custom_dialog/components/example/alert_dialog.dart';
+import 'package:flutter_custom_dialog/components/example/bottom_sheet_dialog.dart';
 import 'package:flutter_custom_dialog/components/example/listview_dialog.dart';
 import 'package:flutter_custom_dialog/components/example/progress_dialog.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
@@ -71,10 +71,13 @@ showAlertDialog(BuildContext context) {
         ),
         Row(
           children: <Widget>[
-            makeTextButton("nobody", () {
+            makeTextButton("bottomsheet", () {
+              YYBottomSheetDialog();
+            }),
+            makeTextButton("progress", () {
               YYProgressDialogNoBody();
             }),
-            makeTextButton("body", () {
+            makeTextButton("progress\n&body", () {
               YYProgressDialogBody();
             }),
             makeTextButton("pop\nmenu", () {

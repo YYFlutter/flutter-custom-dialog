@@ -18,3 +18,7 @@
 ## 1.0.4
 
 * Without the Context to invoke
+
+## 1.0.5
+
+* Modify constraints property

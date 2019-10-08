@@ -15,7 +15,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.4
+  flutter_custom_dialog: ^1.0.5
 ```
 
 **2、import**
@@ -78,6 +78,13 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/7.png" width="150px">
       <br />
       progress&body
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/9.png" width="150px">
+      <br />
+      bottom sheet
       <br />
       ✅
     </td>
