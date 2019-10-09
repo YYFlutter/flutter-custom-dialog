@@ -1,28 +1,3 @@
-## 1.0.0
+## 0.0.1
 
-* first release
-* welcome to submit bug
-
-## 1.0.1
-
-* fix dismiss Bug
-
-## 1.0.2
-
-* add gravity of leftTop,leftBottom,rightTop,rightBottom
-
-## 1.0.3
-
-* add gravityAnimationEnable property
-
-## 1.0.4
-
-* Without the Context to invoke
-
-## 1.0.5
-
-* Modify constraints property
-
-## 1.0.6
-
-* Fix Gradle version in `gradle-wrapper.properties`
+* TODO: Describe initial release.
