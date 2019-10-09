@@ -425,10 +425,10 @@ class CustomDialog {
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
-        print('show buildContext => #$buildContext');
+        print('[YYDialog] buildContext => #$buildContext');
         return Builder(
           builder: (BuildContext context) {
-            print('show context => #$context');
+            print('[YYDialog] context => #$context');
             return _child;
           },
         );
