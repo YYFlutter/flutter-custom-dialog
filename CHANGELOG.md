@@ -22,3 +22,7 @@
 ## 1.0.5
 
 * Modify constraints property
+
+## 1.0.6
+
+* Fix Gradle version in `gradle-wrapper.properties`
