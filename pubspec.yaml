@@ -1,8 +1,8 @@
 name: flutter_custom_dialog
-description: A new flutter plugin project.
-version: 0.0.1
-author:
-homepage:
+description: Semantic dialog
+version: 1.0.7
+author: AndroidHensen <xyj510402535@qq.com>
+homepage: https://github.com/YYFlutter/flutter-custom-dialog.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
