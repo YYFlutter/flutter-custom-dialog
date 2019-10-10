@@ -45,7 +45,8 @@ class YYDialog {
     return this;
   }
 
-  YYDialog text({padding, text, color, fontSize, alignment, fontWeight}) {
+  YYDialog text(
+      {padding, text, color, fontSize, alignment, fontWeight, fontFamily}) {
     return this.widget(
       Padding(
         padding: padding ?? EdgeInsets.all(0.0),
@@ -57,6 +58,7 @@ class YYDialog {
               color: color ?? Colors.black,
               fontSize: fontSize ?? 14.0,
               fontWeight: fontWeight,
+              fontFamily: fontFamily,
             ),
           ),
         ),
@@ -74,11 +76,13 @@ class YYDialog {
     color1,
     fontSize1,
     fontWeight1,
+    fontFamily1,
     VoidCallback onTap1,
     text2,
     color2,
     fontSize2,
     fontWeight2,
+    fontFamily2,
     onTap2,
   }) {
     return this.widget(
@@ -100,7 +104,8 @@ class YYDialog {
                 style: TextStyle(
                   color: color1 ?? null,
                   fontSize: fontSize1 ?? null,
-                  fontWeight: fontWeight1 ?? null,
+                  fontWeight: fontWeight1,
+                  fontFamily: fontFamily1,
                 ),
               ),
             ),
@@ -121,7 +126,8 @@ class YYDialog {
                 style: TextStyle(
                   color: color2 ?? Colors.black,
                   fontSize: fontSize2 ?? 14.0,
-                  fontWeight: fontWeight2 ?? null,
+                  fontWeight: fontWeight2,
+                  fontFamily: fontFamily2,
                 ),
               ),
             )
@@ -164,7 +170,8 @@ class YYDialog {
                     style: TextStyle(
                       color: items[index].color ?? null,
                       fontSize: items[index].fontSize ?? null,
-                      fontWeight: items[index].fontWeight ?? null,
+                      fontWeight: items[index].fontWeight,
+                      fontFamily: items[index].fontFamily,
                     ),
                   ),
                 ),
@@ -226,7 +233,6 @@ class YYDialog {
   void show([x, y]) {
     var mainAxisAlignment = getColumnMainAxisAlignment(gravity);
     var crossAxisAlignment = getColumnCrossAxisAlignment(gravity);
-    Size size = MediaQuery.of(this.context).size;
     if (x != null && y != null) {
       gravity = Gravity.leftTop;
       margin = EdgeInsets.only(left: x, top: y);
@@ -523,6 +529,7 @@ class ListTileItem {
     this.color,
     this.fontSize,
     this.fontWeight,
+    this.fontFamily,
   });
 
   EdgeInsets padding;
@@ -531,6 +538,7 @@ class ListTileItem {
   Color color;
   double fontSize;
   FontWeight fontWeight;
+  String fontFamily;
 }
 
 class RadioItem {

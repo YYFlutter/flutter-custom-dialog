@@ -30,3 +30,7 @@
 ## 1.0.7
 
 * Fix Gradle build Aar
+
+## 1.0.8
+
+* Fix Gradle build Aar for iOS
