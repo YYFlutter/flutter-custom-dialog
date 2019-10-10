@@ -34,3 +34,7 @@
 ## 1.0.8
 
 * Fix Gradle build Aar for iOS
+
+## 1.0.9
+
+* Update Android kotlin version to 1.3.0
