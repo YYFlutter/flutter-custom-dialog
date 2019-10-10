@@ -84,6 +84,13 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
     <td align="center">
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/9.png" width="150px">
       <br />
+      notice
+      <br />
+      ✅
+    </td>
+    <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/10.png" width="150px">
+      <br />
       bottom sheet
       <br />
       ✅

@@ -91,6 +91,13 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
       ✅
     </td>
     <td align="center">
+      <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/10.png" width="150px">
+      <br />
+      notice
+      <br />
+      ✅
+    </td>
+    <td align="center">
       <img src="https://github.com/YYFlutter/flutter-custom-dialog/raw/master/image/png/8.png" width="150px">
       <br />
       pop menu

@@ -1,10 +1,11 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_dialog/components/example/alert_dialog.dart';
-import 'package:flutter_custom_dialog/components/example/bottom_sheet_dialog.dart';
-import 'package:flutter_custom_dialog/components/example/listview_dialog.dart';
-import 'package:flutter_custom_dialog/components/example/progress_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/alert_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/bottom_sheet_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/listview_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/progress_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/notice_dialog.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
 void main() => runApp(MyApp());
@@ -85,6 +86,13 @@ showAlertDialog(BuildContext context) {
             }),
             makeTextButton("custom\nx&y", () {
               YYAlertDialogCustomXY();
+            }),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            makeTextButton("notice", () {
+              YYNoticeDialog();
             }),
           ],
         ),
