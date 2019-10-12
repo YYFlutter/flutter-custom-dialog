@@ -189,7 +189,9 @@ class YYDialog {
     Color activeColor,
     Function(int) onClickItemListener,
   }) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return this.widget(
       Container(
         height: height,
@@ -377,6 +379,7 @@ class CustomDialogChildState extends State<CustomDialogChildren> {
 
   @override
   void dispose() {
+    print('[YYDialog] Your dialog has been dismiss');
     widget.isShowingChange(false);
     super.dispose();
   }
@@ -404,7 +407,8 @@ class CustomDialog {
     bool gravityAnimationEnable,
     Function animatedFunc,
     bool barrierDismissible,
-  })  : _child = child,
+  })
+      : _child = child,
         _context = context,
         _gravity = gravity,
         _gravityAnimationEnable = gravityAnimationEnable,
@@ -431,10 +435,9 @@ class CustomDialog {
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
-        print('[YYDialog] buildContext => #$buildContext');
+        print('[YYDialog] Your dialog has been shown');
         return Builder(
           builder: (BuildContext context) {
-            print('[YYDialog] context => #$context');
             return _child;
           },
         );
@@ -442,8 +445,7 @@ class CustomDialog {
     );
   }
 
-  Widget _buildMaterialDialogTransitions(
-      BuildContext context,
+  Widget _buildMaterialDialogTransitions(BuildContext context,
       Animation<double> animation,
       Animation<double> secondaryAnimation,
       Widget child) {

@@ -38,3 +38,7 @@
 ## 1.0.9
 
 * Update Android kotlin version to 1.3.0
+
+## 1.0.10
+
+* add Log
