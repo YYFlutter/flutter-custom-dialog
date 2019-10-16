@@ -42,3 +42,7 @@
 ## 1.0.10
 
 * add Log
+
+## 1.0.11
+
+* remove kotlin

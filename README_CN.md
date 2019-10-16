@@ -15,7 +15,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.10
+  flutter_custom_dialog: ^1.0.11
 ```
 
 **2、import**
