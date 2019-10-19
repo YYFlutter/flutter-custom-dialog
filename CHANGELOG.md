@@ -46,3 +46,7 @@
 ## 1.0.11
 
 * remove kotlin
+
+## 1.0.12
+
+* modify text Semantic

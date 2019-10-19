@@ -46,7 +46,17 @@ class YYDialog {
   }
 
   YYDialog text(
-      {padding, text, color, fontSize, alignment, fontWeight, fontFamily}) {
+      {padding,
+      text,
+      color,
+      fontSize,
+      alignment,
+      textAlign,
+      maxLines,
+      textDirection,
+      overflow,
+      fontWeight,
+      fontFamily}) {
     return this.widget(
       Padding(
         padding: padding ?? EdgeInsets.all(0.0),
@@ -54,6 +64,10 @@ class YYDialog {
           alignment: alignment ?? Alignment.centerLeft,
           child: Text(
             text ?? "",
+            textAlign: textAlign,
+            maxLines: maxLines,
+            textDirection: textDirection,
+            overflow: overflow,
             style: TextStyle(
               color: color ?? Colors.black,
               fontSize: fontSize ?? 14.0,
@@ -189,9 +203,7 @@ class YYDialog {
     Color activeColor,
     Function(int) onClickItemListener,
   }) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     return this.widget(
       Container(
         height: height,
@@ -407,8 +419,7 @@ class CustomDialog {
     bool gravityAnimationEnable,
     Function animatedFunc,
     bool barrierDismissible,
-  })
-      : _child = child,
+  })  : _child = child,
         _context = context,
         _gravity = gravity,
         _gravityAnimationEnable = gravityAnimationEnable,
@@ -445,7 +456,8 @@ class CustomDialog {
     );
   }
 
-  Widget _buildMaterialDialogTransitions(BuildContext context,
+  Widget _buildMaterialDialogTransitions(
+      BuildContext context,
       Animation<double> animation,
       Animation<double> secondaryAnimation,
       Widget child) {
