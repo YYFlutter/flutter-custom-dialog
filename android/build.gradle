@@ -1,5 +1,5 @@
 group 'yy.inc.flutter_custom_dialog'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 buildscript {
     repositories {
