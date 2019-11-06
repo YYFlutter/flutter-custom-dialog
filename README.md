@@ -383,7 +383,7 @@ YYDialog YYAlertDialogBody() {
 
 ## 🔥🔥 Attention
 
-**1、dimiss**
+**1、dismiss**
 
 * Do not use 'Navigator.pop(context)' to make the popover disappear, or you will close your page
 * This problem has been solved internally in YYDialog, and you can simply call 'dismiss()' supplied internally
