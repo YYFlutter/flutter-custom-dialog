@@ -379,6 +379,18 @@ YYDialog YYAlertDialogBody() {
 }
 ```
 
+## 🔥🔥 注意
+
+**1、dimiss**
+
+* 请勿擅自使用`Navigator.pop(context)`让弹窗消失，否则会关掉自己的页面
+* YYDialog内部已经解决了此问题，调用内部提供的`dismiss()`即可
+
+```dart
+var yyDialog = YYDialog();
+yyDialog?.dismiss();
+```
+
 ## Bugs/Requests
 
 * If your application has problems, please submit your code and effect to Issue.
