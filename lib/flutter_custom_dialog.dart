@@ -391,7 +391,6 @@ class CustomDialogChildState extends State<CustomDialogChildren> {
 
   @override
   void dispose() {
-    print('[YYDialog] Your dialog has been dismiss');
     widget.isShowingChange(false);
     super.dispose();
   }
@@ -446,7 +445,6 @@ class CustomDialog {
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
-        print('[YYDialog] Your dialog has been shown');
         return Builder(
           builder: (BuildContext context) {
             return _child;
