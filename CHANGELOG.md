@@ -54,3 +54,7 @@
 ## 1.0.13
 
 * remove kotlin again
+
+## 1.0.14
+
+* remove log
