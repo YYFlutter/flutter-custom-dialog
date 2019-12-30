@@ -15,7 +15,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.14
+  flutter_custom_dialog: ^1.0.15
 ```
 
 **2、import**
@@ -217,18 +217,42 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 弹窗的属性设置可以通过成员变量的方法去调用，具体详见下表
 
 ```dart
-YYDialog YYDialogDemo(BuildContext context) {
-  return YYDialog().build(context)
-    ..width = 220
-    ..height = 500
-    ..barrierColor = Colors.black.withOpacity(.3)
+YYDialog YYNoticeDialog() {
+  return YYDialog().build()
+    ..width = 120
+    ..height = 110
+    ..backgroundColor = Colors.black.withOpacity(0.8)
+    ..borderRadius = 10.0
+    ..showCallBack = () {
+      print("showCallBack invoke");
+    }
+    ..dismissCallBack = () {
+      print("dismissCallBack invoke");
+    }
+    ..widget(Padding(
+      padding: EdgeInsets.only(top: 21),
+      child: Image.asset(
+        'images/success.png',
+        width: 38,
+        height: 38,
+      ),
+    ))
+    ..widget(Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: Text(
+        "Success",
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.white,
+        ),
+      ),
+    ))
     ..animatedFunc = (child, animation) {
       return ScaleTransition(
         child: child,
         scale: Tween(begin: 0.0, end: 1.0).animate(animation),
       );
     }
-    ..borderRadius = 4.0
     ..show();
 }
 ```
@@ -248,6 +272,8 @@ backgroundColor|弹窗内的背景色|白色
 borderRadius|弹窗圆角|0.0
 constraints|弹窗约束|无
 animatedFunc|弹窗出现的动画|从中间出现
+showCallBack|弹窗展示的回调|无
+dismissCallBack|弹窗消失的回调|无
 barrierDismissible|是否点击弹出外部消失|true
 
 支持的方法

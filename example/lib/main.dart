@@ -94,6 +94,9 @@ showAlertDialog(BuildContext context) {
             makeTextButton("notice", () {
               YYNoticeDialog();
             }),
+            makeTextButton("callback", () {
+              YYNoticeDialogCallback();
+            }),
           ],
         ),
         Text("2、dialog property"),

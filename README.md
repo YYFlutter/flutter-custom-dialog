@@ -17,7 +17,7 @@ Global dialog function encapsulation, with a semantic way to fill the content in
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.14
+  flutter_custom_dialog: ^1.0.15
 ```
 
 **2、import**
@@ -219,18 +219,42 @@ import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 dialog property Settings can be called through the method of member variables, as detailed in the following table
 
 ```dart
-YYDialog YYDialogDemo(BuildContext context) {
-  return YYDialog().build(context)
-    ..width = 220
-    ..height = 500
-    ..barrierColor = Colors.black.withOpacity(.3)
+YYDialog YYNoticeDialog() {
+  return YYDialog().build()
+    ..width = 120
+    ..height = 110
+    ..backgroundColor = Colors.black.withOpacity(0.8)
+    ..borderRadius = 10.0
+    ..showCallBack = () {
+      print("showCallBack invoke");
+    }
+    ..dismissCallBack = () {
+      print("dismissCallBack invoke");
+    }
+    ..widget(Padding(
+      padding: EdgeInsets.only(top: 21),
+      child: Image.asset(
+        'images/success.png',
+        width: 38,
+        height: 38,
+      ),
+    ))
+    ..widget(Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: Text(
+        "Success",
+        style: TextStyle(
+          fontSize: 15,
+          color: Colors.white,
+        ),
+      ),
+    ))
     ..animatedFunc = (child, animation) {
       return ScaleTransition(
         child: child,
         scale: Tween(begin: 0.0, end: 1.0).animate(animation),
       );
     }
-    ..borderRadius = 4.0
     ..show();
 }
 ```
@@ -250,6 +274,8 @@ backgroundColor|Dialog backgroundColor|white
 borderRadius|Dialog borderRadius|0.0
 constraints|Dialog constraints|no constraints
 animatedFunc|Animation of dialog|Emerge from the middle
+showCallBack|dialog show callbacks|not
+dismissCallBack|dialog dismiss callbacks|not
 barrierDismissible|Whether to click to pop up the external disappear|true
 
 Supported method

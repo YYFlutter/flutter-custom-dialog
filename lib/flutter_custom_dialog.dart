@@ -23,6 +23,9 @@ class YYDialog {
   bool barrierDismissible = true; //是否点击弹出外部消失
   EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
 
+  Function() showCallBack; //展示的回调
+  Function() dismissCallBack; //消失的回调
+
   get isShowing => _isShowing; //当前弹窗是否可见
   bool _isShowing = false;
 
@@ -280,6 +283,16 @@ class YYDialog {
                 child: CustomDialogChildren(
                   widgetList: widgetList,
                   isShowingChange: (bool isShowingChange) {
+                    // showing or dismiss Callback
+                    if (isShowingChange) {
+                      if (showCallBack != null) {
+                        showCallBack();
+                      }
+                    } else {
+                      if (dismissCallBack != null) {
+                        dismissCallBack();
+                      }
+                    }
                     _isShowing = isShowingChange;
                   },
                 ),

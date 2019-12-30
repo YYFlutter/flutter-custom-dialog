@@ -58,3 +58,7 @@
 ## 1.0.14
 
 * remove log
+
+## 1.0.15
+
+* add callback

@@ -25,5 +25,11 @@ YYDialog YYNoticeDialog() {
         ),
       ),
     ))
+    ..animatedFunc = (child, animation) {
+      return ScaleTransition(
+        child: child,
+        scale: Tween(begin: 0.0, end: 1.0).animate(animation),
+      );
+    }
     ..show();
 }
