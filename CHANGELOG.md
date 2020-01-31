@@ -62,3 +62,7 @@
 ## 1.0.15
 
 * add callback
+
+## 1.0.16
+
+* add decoration property

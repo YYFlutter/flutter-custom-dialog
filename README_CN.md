@@ -15,7 +15,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.15
+  flutter_custom_dialog: ^1.0.16
 ```
 
 **2、import**
@@ -268,6 +268,7 @@ gravity|弹窗出现的位置|居中
 gravityAnimationEnable|弹窗出现的位置带有的默认动画是否可用|false
 margin|弹窗的外边距|EdgeInsets.all(0.0)
 barrierColor|弹窗外的背景色|30%黑色
+decoration|弹窗内的装饰|null
 backgroundColor|弹窗内的背景色|白色
 borderRadius|弹窗圆角|0.0
 constraints|弹窗约束|无
@@ -275,6 +276,9 @@ animatedFunc|弹窗出现的动画|从中间出现
 showCallBack|弹窗展示的回调|无
 dismissCallBack|弹窗消失的回调|无
 barrierDismissible|是否点击弹出外部消失|true
+
+* 设置完gravity后，若需要动画则设置gravityAnimationEnable = true
+* 若设置decoration属性，则backgroundColor和borderRadius不生效，他们是互斥关系
 
 支持的方法
 

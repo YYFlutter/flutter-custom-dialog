@@ -16,13 +16,14 @@ class YYDialog {
   Gravity gravity = Gravity.center; //弹窗出现的位置
   bool gravityAnimationEnable = false; //弹窗出现的位置带有的默认动画是否可用
   Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
-  Color backgroundColor = Colors.white; //弹窗内的背景色
-  Decoration decoration;
-  double borderRadius = 0.0; //弹窗圆角
   BoxConstraints constraints; //弹窗约束
   Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
   EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
+
+  Decoration decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
+  Color backgroundColor = Colors.white; //弹窗内的背景色
+  double borderRadius = 0.0; //弹窗圆角
 
   Function() showCallBack; //展示的回调
   Function() dismissCallBack; //消失的回调
