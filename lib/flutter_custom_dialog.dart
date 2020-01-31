@@ -17,6 +17,7 @@ class YYDialog {
   bool gravityAnimationEnable = false; //弹窗出现的位置带有的默认动画是否可用
   Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
   Color backgroundColor = Colors.white; //弹窗内的背景色
+  Decoration decoration;
   double borderRadius = 0.0; //弹窗圆角
   BoxConstraints constraints; //弹窗约束
   Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
@@ -275,7 +276,7 @@ class YYDialog {
                 padding: EdgeInsets.all(borderRadius / 3.14),
                 width: width ?? null,
                 height: height ?? null,
-                decoration: BoxDecoration(
+                decoration: decoration ?? BoxDecoration(
                   borderRadius: BorderRadius.circular(borderRadius),
                   color: backgroundColor,
                 ),
@@ -384,10 +385,10 @@ class YYDialog {
 
 ///弹窗的内容作为可变组件
 class CustomDialogChildren extends StatefulWidget {
-  List<Widget> widgetList = []; //弹窗内部所有组件
-  Function(bool) isShowingChange;
+  final List<Widget> widgetList; //弹窗内部所有组件
+  final Function(bool) isShowingChange;
 
-  CustomDialogChildren({this.widgetList, this.isShowingChange});
+  CustomDialogChildren({this.widgetList = const [], this.isShowingChange});
 
   @override
   CustomDialogChildState createState() => CustomDialogChildState();

@@ -12,9 +12,9 @@ class YYRadioListTile extends StatefulWidget {
   })  : assert(items != null),
         super(key: key);
 
-  List<RadioItem> items;
-  Color activeColor;
-  Function(int) onChanged;
+  final List<RadioItem> items;
+  final Color activeColor;
+  final Function(int) onChanged;
 
   @override
   State<StatefulWidget> createState() {
