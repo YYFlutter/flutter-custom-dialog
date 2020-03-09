@@ -33,7 +33,6 @@ class YYRadioListTileState extends State<YYRadioListTile> {
       itemCount: widget.items.length,
       itemBuilder: (BuildContext context, int index) {
         return Material(
-          color: Colors.white,
           child: RadioListTile(
             title: Text(widget.items[index].text),
             value: index,
