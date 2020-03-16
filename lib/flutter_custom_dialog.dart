@@ -207,6 +207,7 @@ class YYDialog {
     double height,
     Color activeColor,
     Function(int) onClickItemListener,
+    String selectedItem,
   }) {
     Size size = MediaQuery.of(context).size;
     return this.widget(
@@ -221,6 +222,7 @@ class YYDialog {
           items: items,
           activeColor: activeColor,
           onChanged: onClickItemListener,
+          selectedItem: selectedItem,
         ),
       ),
     );
