@@ -25,9 +25,15 @@ class YYRadioListTile extends StatefulWidget {
 }
 
 class YYRadioListTileState extends State<YYRadioListTile> {
-  String selectedItem = widget.selectedItem;
-  var groupId = widget.items.indexWhere((item) => item.text?.toLowerCase() == selectedItem?.toLowerCase());
+  String selectedItem;
+  int groupId = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    selectedItem = widget.selectedItem;
+    groupId = widget.items.indexWhere((item) => item.text?.toLowerCase() == widget.selectedItem?.toLowerCase());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +53,7 @@ class YYRadioListTileState extends State<YYRadioListTile> {
               setState(() {
                 widget.onChanged(value);
                 groupId = value;
-                selectedItem = widget.items[value];
+                selectedItem = widget.items[value].text;
               });
             },
           ),
