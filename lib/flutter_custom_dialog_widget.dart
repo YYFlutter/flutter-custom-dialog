@@ -39,7 +39,7 @@ class YYRadioListTileState extends State<YYRadioListTile> {
             title: Text(widget.items[index].text),
             value: index,
             selected: widget.items[index].text?.toLowerCase() == widget.selectedItem?.toLowerCase(),
-            groupValue: groupId,
+            groupValue: widget.items.indexWhere((item) => item.text?.toLowerCase() == widget.selectedItem?.toLowerCase()),
             activeColor: widget.activeColor,
             onChanged: (int value) {
               setState(() {
