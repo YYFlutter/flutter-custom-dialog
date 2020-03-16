@@ -9,12 +9,14 @@ class YYRadioListTile extends StatefulWidget {
     this.items,
     this.activeColor,
     this.onChanged,
+    this.selectedItem,
   })  : assert(items != null),
         super(key: key);
 
   final List<RadioItem> items;
   final Color activeColor;
   final Function(int) onChanged;
+  final String selectedItem;
 
   @override
   State<StatefulWidget> createState() {
@@ -36,6 +38,7 @@ class YYRadioListTileState extends State<YYRadioListTile> {
           child: RadioListTile(
             title: Text(widget.items[index].text),
             value: index,
+            selected: widget.items[index].text?.toLowerCase() == selectedItem?..toLowerCase()
             groupValue: groupId,
             activeColor: widget.activeColor,
             onChanged: (int value) {
