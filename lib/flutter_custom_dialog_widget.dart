@@ -38,7 +38,7 @@ class YYRadioListTileState extends State<YYRadioListTile> {
           child: RadioListTile(
             title: Text(widget.items[index].text),
             value: index,
-            selected: widget.items[index].text?.toLowerCase() == selectedItem?..toLowerCase(),
+            selected: widget.items[index].text?.toLowerCase() == selectedItem?.toLowerCase(),
             groupValue: groupId,
             activeColor: widget.activeColor,
             onChanged: (int value) {
