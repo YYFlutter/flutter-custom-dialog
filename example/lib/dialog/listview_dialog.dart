@@ -63,54 +63,63 @@ var radioItems = [
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "None",
+    value: 1,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Callisto",
+    value: 11,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Ganymede",
+    value: 7,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Luna",
+    value: 6,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Oberon",
+    value: 4,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Phobos",
+    value: 18,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Dione",
+    value: 16,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "James",
+    value: 10,
     color: Colors.black,
     fontSize: 16.0,
   ),
   RadioItem(
     padding: EdgeInsets.only(left: 6.0),
     text: "Lina",
+    value: 25,
     color: Colors.black,
     fontSize: 16.0,
   ),
@@ -151,6 +160,7 @@ YYDialog YYListViewDialogListRadio() {
     ..listViewOfRadioButton(
         items: radioItems,
         height: 370,
+        intialValue: 7,
         activeColor: Colors.deepPurpleAccent,
         onClickItemListener: (index) {
           var radioItem = radioItems[index];

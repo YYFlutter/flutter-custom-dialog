@@ -206,6 +206,7 @@ class YYDialog {
     List<RadioItem> items,
     double height,
     Color activeColor,
+    int intialValue,
     Function(int) onClickItemListener,
   }) {
     Size size = MediaQuery.of(context).size;
@@ -219,6 +220,7 @@ class YYDialog {
         ),
         child: YYRadioListTile(
           items: items,
+          intialValue: intialValue,
           activeColor: activeColor,
           onChanged: onClickItemListener,
         ),
@@ -572,6 +574,7 @@ class RadioItem {
   RadioItem({
     this.padding,
     this.text,
+    this.value,
     this.color,
     this.fontSize,
     this.fontWeight,
@@ -580,6 +583,7 @@ class RadioItem {
 
   EdgeInsets padding;
   String text;
+  int value;
   Color color;
   double fontSize;
   FontWeight fontWeight;
