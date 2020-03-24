@@ -47,10 +47,10 @@ class YYRadioListTileState extends State<YYRadioListTile> {
             groupValue: selectedItem,
             activeColor: widget.activeColor,
             onChanged: (int value) {
-              print("change: " + value.toString());
               setState(() {
                 selectedItem = value;
               });
+              widget.onChanged(value);
             },
           ),
         );
