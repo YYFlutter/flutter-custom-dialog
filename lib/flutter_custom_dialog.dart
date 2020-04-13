@@ -276,9 +276,10 @@ class YYDialog {
           crossAxisAlignment: crossAxisAlignment,
           children: <Widget>[
             Material(
+              clipBehavior: Clip.antiAlias,
               type: MaterialType.transparency,
+              borderRadius: BorderRadius.circular(borderRadius),
               child: Container(
-                padding: EdgeInsets.all(borderRadius / 3.14),
                 width: width ?? null,
                 height: height ?? null,
                 decoration: decoration ??

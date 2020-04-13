@@ -74,3 +74,7 @@
 ## 1.0.18
 
 * add color property for listRadio
+
+## 1.0.19
+
+* fix a padding bug
