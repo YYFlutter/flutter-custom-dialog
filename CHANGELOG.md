@@ -70,3 +70,7 @@
 ## 1.0.17
 
 * add decoration property
+
+## 1.0.18
+
+* add color property for listRadio
