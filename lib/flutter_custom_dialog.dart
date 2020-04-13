@@ -28,7 +28,7 @@ class YYDialog {
   Function() showCallBack; //展示的回调
   Function() dismissCallBack; //消失的回调
 
-  get isShowing => _isShowing; //当前弹窗是否可见
+  get isShowing => _isShowing; //当前 弹窗是否可见
   bool _isShowing = false;
 
   //============================================================================
@@ -574,7 +574,6 @@ class RadioItem {
   RadioItem({
     this.padding,
     this.text,
-    this.value,
     this.color,
     this.fontSize,
     this.fontWeight,
@@ -583,7 +582,6 @@ class RadioItem {
 
   EdgeInsets padding;
   String text;
-  int value;
   Color color;
   double fontSize;
   FontWeight fontWeight;

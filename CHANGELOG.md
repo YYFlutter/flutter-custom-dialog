@@ -66,3 +66,7 @@
 ## 1.0.16
 
 * add decoration property
+
+## 1.0.17
+
+* add decoration property
