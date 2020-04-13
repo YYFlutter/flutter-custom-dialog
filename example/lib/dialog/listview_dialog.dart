@@ -152,6 +152,7 @@ YYDialog YYListViewDialogListRadio() {
         items: radioItems,
         height: 370,
         intialValue: 2,
+        color: Colors.white,
         activeColor: Colors.deepPurpleAccent,
         onClickItemListener: (index) {
           var radioItem = radioItems[index];

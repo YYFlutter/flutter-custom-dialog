@@ -205,6 +205,7 @@ class YYDialog {
   YYDialog listViewOfRadioButton({
     List<RadioItem> items,
     double height,
+    Color color,
     Color activeColor,
     int intialValue,
     Function(int) onClickItemListener,
@@ -221,6 +222,7 @@ class YYDialog {
         child: YYRadioListTile(
           items: items,
           intialValue: intialValue,
+          color: color,
           activeColor: activeColor,
           onChanged: onClickItemListener,
         ),
@@ -279,10 +281,11 @@ class YYDialog {
                 padding: EdgeInsets.all(borderRadius / 3.14),
                 width: width ?? null,
                 height: height ?? null,
-                decoration: decoration ?? BoxDecoration(
-                  borderRadius: BorderRadius.circular(borderRadius),
-                  color: backgroundColor,
-                ),
+                decoration: decoration ??
+                    BoxDecoration(
+                      borderRadius: BorderRadius.circular(borderRadius),
+                      color: backgroundColor,
+                    ),
                 constraints: constraints ?? BoxConstraints(),
                 child: CustomDialogChildren(
                   widgetList: widgetList,

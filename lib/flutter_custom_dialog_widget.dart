@@ -8,12 +8,14 @@ class YYRadioListTile extends StatefulWidget {
     Key key,
     this.items,
     this.intialValue,
+    this.color,
     this.activeColor,
     this.onChanged,
   })  : assert(items != null),
         super(key: key);
 
   final List<RadioItem> items;
+  final Color color;
   final Color activeColor;
   final intialValue;
   final Function(int) onChanged;
@@ -46,7 +48,7 @@ class YYRadioListTileState extends State<YYRadioListTile> {
       itemCount: widget.items.length,
       itemBuilder: (BuildContext context, int index) {
         return Material(
-          color: Colors.white,
+          color: widget.color,
           child: RadioListTile(
             title: Text(widget.items[index].text),
             value: index,
