@@ -8,6 +8,8 @@ import 'package:flutter_custom_dialog_example/dialog/progress_dialog.dart';
 import 'package:flutter_custom_dialog_example/dialog/notice_dialog.dart';
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 
+import 'dialog/develop_dialog.dart';
+
 void main() => runApp(MyApp());
 
 var titleTextStyle = TextStyle(fontSize: 22, color: Colors.black);
@@ -257,6 +259,9 @@ showDevelopDialog(BuildContext context) {
                           ),
                         )),
               );
+            }),
+            makeTextButton("fix textfield", () {
+              YYFixTextFieldDialog();
             }),
           ],
         ),
