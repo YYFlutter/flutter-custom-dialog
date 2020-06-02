@@ -19,6 +19,7 @@ class YYDialog {
   BoxConstraints constraints; //弹窗约束
   Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
+  bool useRootNavigator = true; // see also Navigator.of()
   EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
 
   Decoration decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
@@ -267,6 +268,7 @@ class YYDialog {
       barrierColor: barrierColor,
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
+      useRootNavigator: useRootNavigator,
       duration: duration,
       child: Padding(
         padding: margin,
@@ -314,7 +316,7 @@ class YYDialog {
 
   void dismiss() {
     if (_isShowing) {
-      Navigator.of(context, rootNavigator: true).pop();
+      Navigator.of(context, rootNavigator: useRootNavigator).pop();
     }
   }
 
@@ -425,6 +427,7 @@ class CustomDialog {
   Color _barrierColor;
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible;
+  bool _useRootNavigator;
   Gravity _gravity;
   bool _gravityAnimationEnable;
   Function _animatedFunc;
@@ -439,6 +442,7 @@ class CustomDialog {
     bool gravityAnimationEnable,
     Function animatedFunc,
     bool barrierDismissible,
+    bool useRootNavigator,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
@@ -447,8 +451,9 @@ class CustomDialog {
         _barrierColor = barrierColor,
         _animatedFunc = animatedFunc,
         _transitionsBuilder = transitionsBuilder,
-        _barrierDismissible = barrierDismissible {
-    this.show();
+        _barrierDismissible = barrierDismissible,
+        _useRootNavigator = useRootNavigator {
+      this.show();
   }
 
   show() {
@@ -461,6 +466,7 @@ class CustomDialog {
       context: _context,
       barrierColor: _barrierColor ?? Colors.black.withOpacity(.3),
       barrierDismissible: _barrierDismissible ?? true,
+      useRootNavigator: _useRootNavigator ?? true,
       barrierLabel: "",
       transitionDuration: _duration ?? Duration(milliseconds: 250),
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
