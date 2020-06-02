@@ -78,3 +78,7 @@
 ## 1.0.19
 
 * fix a padding bug
+
+## 1.0.20
+
+* add a useRootNavigator property

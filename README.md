@@ -17,7 +17,7 @@ Global dialog function encapsulation, with a semantic way to fill the content in
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.19
+  flutter_custom_dialog: ^1.0.20
 ```
 
 **2、import**
@@ -278,6 +278,7 @@ animatedFunc|Animation of dialog|Emerge from the middle
 showCallBack|dialog show callbacks|not
 dismissCallBack|dialog dismiss callbacks|not
 barrierDismissible|Whether to click to pop up the external disappear|true
+useRootNavigator|Whether to use root navigation|true
 
 * After setting gravity, set gravityAnimationEnable = true if animation is needed
 * If the decoration property is set, the backgroundColor and borderRadius are not in effect; they are mutually exclusive

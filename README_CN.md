@@ -15,7 +15,7 @@
 
 ```yaml
 dependencies:
-  flutter_custom_dialog: ^1.0.19
+  flutter_custom_dialog: ^1.0.20
 ```
 
 **2、import**
@@ -276,6 +276,7 @@ animatedFunc|弹窗出现的动画|从中间出现
 showCallBack|弹窗展示的回调|无
 dismissCallBack|弹窗消失的回调|无
 barrierDismissible|是否点击弹出外部消失|true
+useRootNavigator|是否使用根导航|true
 
 * 设置完gravity后，若需要动画则设置gravityAnimationEnable = true
 * 若设置decoration属性，则backgroundColor和borderRadius不生效，他们是互斥关系
