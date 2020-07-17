@@ -9,6 +9,7 @@ class YYDialog {
   List<Widget> widgetList = []; //弹窗内部所有组件
   static BuildContext _context; //弹窗上下文
   BuildContext context; //弹窗上下文
+  BuildContext _dialogContext; // context of the dialog itself
 
   double width; //弹窗宽度
   double height; //弹窗高度
@@ -273,53 +274,63 @@ class YYDialog {
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
       duration: duration,
-      child: Padding(
-        padding: margin,
-        child: Column(
-          textDirection: TextDirection.ltr,
-          mainAxisAlignment: mainAxisAlignment,
-          crossAxisAlignment: crossAxisAlignment,
-          children: <Widget>[
-            Material(
-              clipBehavior: Clip.antiAlias,
-              type: MaterialType.transparency,
-              borderRadius: BorderRadius.circular(borderRadius),
-              child: Container(
-                width: width ?? null,
-                height: height ?? null,
-                decoration: decoration ??
-                    BoxDecoration(
-                      borderRadius: BorderRadius.circular(borderRadius),
-                      color: backgroundColor,
+      child: Builder(
+        builder: (context) {
+          _dialogContext = context;
+          return Padding(
+            padding: margin,
+            child: Column(
+              textDirection: TextDirection.ltr,
+              mainAxisAlignment: mainAxisAlignment,
+              crossAxisAlignment: crossAxisAlignment,
+              children: <Widget>[
+                Material(
+                  clipBehavior: Clip.antiAlias,
+                  type: MaterialType.transparency,
+                  borderRadius: BorderRadius.circular(borderRadius),
+                  child: Container(
+                    width: width ?? null,
+                    height: height ?? null,
+                    decoration: decoration ??
+                        BoxDecoration(
+                          borderRadius: BorderRadius.circular(borderRadius),
+                          color: backgroundColor,
+                        ),
+                    constraints: constraints ?? BoxConstraints(),
+                    child: CustomDialogChildren(
+                      widgetList: widgetList,
+                      isShowingChange: (bool isShowingChange) {
+                        // showing or dismiss Callback
+                        if (isShowingChange) {
+                          if (showCallBack != null) {
+                            showCallBack();
+                          }
+                        } else {
+                          if (dismissCallBack != null) {
+                            dismissCallBack();
+                          }
+                        }
+                        _isShowing = isShowingChange;
+                      },
                     ),
-                constraints: constraints ?? BoxConstraints(),
-                child: CustomDialogChildren(
-                  widgetList: widgetList,
-                  isShowingChange: (bool isShowingChange) {
-                    // showing or dismiss Callback
-                    if (isShowingChange) {
-                      if (showCallBack != null) {
-                        showCallBack();
-                      }
-                    } else {
-                      if (dismissCallBack != null) {
-                        dismissCallBack();
-                      }
-                    }
-                    _isShowing = isShowingChange;
-                  },
-                ),
-              ),
-            )
-          ],
-        ),
+                  ),
+                )
+              ],
+            ),
+          );
+        }
       ),
     );
   }
 
   void dismiss() {
     if (_isShowing) {
-      Navigator.of(context, rootNavigator: useRootNavigator).pop();
+      if (_dialogContext != null) {
+        Navigator.of(_dialogContext)?.pop();
+      } else {
+        // Navigator.of() may return null
+        Navigator.of(context, rootNavigator: useRootNavigator)?.pop();
+      }
     }
   }
 
