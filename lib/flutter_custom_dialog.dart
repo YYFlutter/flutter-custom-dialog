@@ -273,6 +273,7 @@ class YYDialog {
       barrierColor: barrierColor,
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
+      useRootNavigator: useRootNavigator,
       duration: duration,
       child: Builder(
         builder: (context) {
@@ -441,6 +442,7 @@ class CustomDialog {
   Color _barrierColor;
   RouteTransitionsBuilder _transitionsBuilder;
   bool _barrierDismissible;
+  bool _useRootNavigator;
   Gravity _gravity;
   bool _gravityAnimationEnable;
   Function _animatedFunc;
@@ -455,6 +457,7 @@ class CustomDialog {
     bool gravityAnimationEnable,
     Function animatedFunc,
     bool barrierDismissible,
+    bool useRootNavigator,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
@@ -463,8 +466,9 @@ class CustomDialog {
         _barrierColor = barrierColor,
         _animatedFunc = animatedFunc,
         _transitionsBuilder = transitionsBuilder,
-        _barrierDismissible = barrierDismissible {
-    this.show();
+        _barrierDismissible = barrierDismissible,
+        _useRootNavigator = useRootNavigator {
+      this.show();
   }
 
   show() {
@@ -477,6 +481,7 @@ class CustomDialog {
       context: _context,
       barrierColor: _barrierColor ?? Colors.black.withOpacity(.3),
       barrierDismissible: _barrierDismissible ?? true,
+      useRootNavigator: _useRootNavigator ?? true,
       barrierLabel: "",
       transitionDuration: _duration ?? Duration(milliseconds: 250),
       transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
