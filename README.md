@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/pub/v/flutter_custom_dialog.svg)](https://pub.dev/packages/flutter_custom_dialog)
 
-**[Lanuage ~~]** [English](README.md) | [中文文档](README_CN.md)
+**[Language ~~]** [English](README.md) | [中文文档](README_CN.md)
 
 Global dialog function encapsulation, with a semantic way to fill the content inside the dialog, the current function provided
 
