@@ -9,6 +9,8 @@ class YYDialog {
   List<Widget> widgetList = []; //弹窗内部所有组件
   static BuildContext _context; //弹窗上下文
   BuildContext context; //弹窗上下文
+  /// context of the dialog itself
+  BuildContext get dialogContext => _dialogContext;
   BuildContext _dialogContext; // context of the dialog itself
 
   double width; //弹窗宽度
