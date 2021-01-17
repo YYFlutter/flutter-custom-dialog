@@ -386,6 +386,9 @@ class YYDialog {
       case Gravity.right:
         mainAxisAlignment = MainAxisAlignment.end;
         break;
+      case Gravity.spaceEvenly:
+        mainAxisAlignment = MainAxisAlignment.spaceEvenly;
+        break;
       case Gravity.center:
       default:
         mainAxisAlignment = MainAxisAlignment.center;
@@ -555,6 +558,7 @@ enum Gravity {
   leftTop,
   rightBottom,
   leftBottom,
+  spaceEvenly,
 }
 //============================================================================
 
