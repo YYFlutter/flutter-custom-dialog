@@ -5,8 +5,8 @@ export 'package:flutter_custom_dialog/flutter_custom_dialog_widget.dart';
 
 class YYRadioListTile extends StatefulWidget {
   YYRadioListTile({
-    Key key,
-    this.items,
+    Key? key,
+    required this.items,
     this.intialValue,
     this.color,
     this.activeColor,
@@ -15,10 +15,10 @@ class YYRadioListTile extends StatefulWidget {
         super(key: key);
 
   final List<RadioItem> items;
-  final Color color;
-  final Color activeColor;
+  final Color? color;
+  final Color? activeColor;
   final intialValue;
-  final Function(int) onChanged;
+  final Function(int?)? onChanged;
 
   @override
   State<StatefulWidget> createState() {
@@ -27,7 +27,7 @@ class YYRadioListTile extends StatefulWidget {
 }
 
 class YYRadioListTileState extends State<YYRadioListTile> {
-  var groupId = -1;
+  int? groupId = -1;
 
   void intialSelectedItem() {
     //intialValue:
@@ -50,13 +50,13 @@ class YYRadioListTileState extends State<YYRadioListTile> {
         return Material(
           color: widget.color,
           child: RadioListTile(
-            title: Text(widget.items[index].text),
+            title: Text(widget.items[index].text!),
             value: index,
             groupValue: groupId,
             activeColor: widget.activeColor,
-            onChanged: (int value) {
+            onChanged: (int? value) {
               setState(() {
-                widget.onChanged(value);
+                widget.onChanged!(value);
                 groupId = value;
               });
             },
