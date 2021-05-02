@@ -7,17 +7,17 @@ export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 class YYDialog {
   //================================弹窗属性======================================
   List<Widget> widgetList = []; //弹窗内部所有组件
-  static BuildContext _context; //弹窗上下文
-  BuildContext context; //弹窗上下文
+  static BuildContext? _context; //弹窗上下文
+  BuildContext? context; //弹窗上下文
 
-  double width; //弹窗宽度
-  double height; //弹窗高度
+  double? width; //弹窗宽度
+  double? height; //弹窗高度
   Duration duration = Duration(milliseconds: 250); //弹窗动画出现的时间
   Gravity gravity = Gravity.center; //弹窗出现的位置
   bool gravityAnimationEnable = false; //弹窗出现的位置带有的默认动画是否可用
   Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
-  BoxConstraints constraints; //弹窗约束
-  Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
+  BoxConstraints? constraints; //弹窗约束
+  Function(Widget child, Animation<double> animation)? animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
   EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
 
@@ -26,12 +26,12 @@ class YYDialog {
   /// @params useRootNavigator=true，push是用的嵌套根布局的context
   bool useRootNavigator = true;
 
-  Decoration decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
+  Decoration? decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
   Color backgroundColor = Colors.white; //弹窗内的背景色
   double borderRadius = 0.0; //弹窗圆角
 
-  Function() showCallBack; //展示的回调
-  Function() dismissCallBack; //消失的回调
+  Function()? showCallBack; //展示的回调
+  Function()? dismissCallBack; //消失的回调
 
   get isShowing => _isShowing; //当前 弹窗是否可见
   bool _isShowing = false;
@@ -41,7 +41,7 @@ class YYDialog {
     _context = ctx;
   }
 
-  YYDialog build([BuildContext ctx]) {
+  YYDialog build([BuildContext? ctx]) {
     if (ctx == null && _context != null) {
       this.context = _context;
       return this;
@@ -101,7 +101,7 @@ class YYDialog {
     fontSize1,
     fontWeight1,
     fontFamily1,
-    VoidCallback onTap1,
+    VoidCallback? onTap1,
     text2,
     color2,
     fontSize2,
@@ -162,10 +162,10 @@ class YYDialog {
   }
 
   YYDialog listViewOfListTile({
-    List<ListTileItem> items,
-    double height,
+    required List<ListTileItem> items,
+    double? height,
     isClickAutoDismiss = true,
-    Function(int) onClickItemListener,
+    Function(int)? onClickItemListener,
   }) {
     return this.widget(
       Container(
@@ -208,14 +208,14 @@ class YYDialog {
   }
 
   YYDialog listViewOfRadioButton({
-    List<RadioItem> items,
-    double height,
-    Color color,
-    Color activeColor,
-    int intialValue,
-    Function(int) onClickItemListener,
+    required List<RadioItem> items,
+    double? height,
+    Color? color,
+    Color? activeColor,
+    int? intialValue,
+    Function(int?)? onClickItemListener,
   }) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context!).size;
     return this.widget(
       Container(
         height: height,
@@ -236,13 +236,13 @@ class YYDialog {
   }
 
   YYDialog circularProgress(
-      {padding, backgroundColor, valueColor, strokeWidth}) {
+      {required padding, backgroundColor, valueColor, strokeWidth}) {
     return this.widget(Padding(
       padding: padding,
       child: CircularProgressIndicator(
         strokeWidth: strokeWidth ?? 4.0,
         backgroundColor: backgroundColor,
-        valueColor: AlwaysStoppedAnimation<Color>(valueColor),
+        valueColor: AlwaysStoppedAnimation<Color?>(valueColor),
       ),
     ));
   }
@@ -299,11 +299,11 @@ class YYDialog {
                     // showing or dismiss Callback
                     if (isShowingChange) {
                       if (showCallBack != null) {
-                        showCallBack();
+                        showCallBack!();
                       }
                     } else {
                       if (dismissCallBack != null) {
-                        dismissCallBack();
+                        dismissCallBack!();
                       }
                     }
                     _isShowing = isShowingChange;
@@ -319,7 +319,7 @@ class YYDialog {
 
   void dismiss() {
     if (_isShowing) {
-      Navigator.of(context, rootNavigator: useRootNavigator).pop();
+      Navigator.of(context!, rootNavigator: useRootNavigator).pop();
     }
   }
 
@@ -398,7 +398,7 @@ class YYDialog {
 ///弹窗的内容作为可变组件
 class CustomDialogChildren extends StatefulWidget {
   final List<Widget> widgetList; //弹窗内部所有组件
-  final Function(bool) isShowingChange;
+  final Function(bool)? isShowingChange;
 
   CustomDialogChildren({this.widgetList = const [], this.isShowingChange});
 
@@ -409,7 +409,7 @@ class CustomDialogChildren extends StatefulWidget {
 class CustomDialogChildState extends State<CustomDialogChildren> {
   @override
   Widget build(BuildContext context) {
-    widget.isShowingChange(true);
+    widget.isShowingChange!(true);
     return Column(
       children: widget.widgetList,
     );
@@ -417,33 +417,33 @@ class CustomDialogChildState extends State<CustomDialogChildren> {
 
   @override
   void dispose() {
-    widget.isShowingChange(false);
+    widget.isShowingChange!(false);
     super.dispose();
   }
 }
 
 ///弹窗API的封装
 class CustomDialog {
-  BuildContext _context;
+  BuildContext? _context;
   Widget _child;
-  Duration _duration;
-  Color _barrierColor;
-  RouteTransitionsBuilder _transitionsBuilder;
-  bool _barrierDismissible;
-  Gravity _gravity;
-  bool _gravityAnimationEnable;
-  Function _animatedFunc;
+  Duration? _duration;
+  Color? _barrierColor;
+  RouteTransitionsBuilder? _transitionsBuilder;
+  bool? _barrierDismissible;
+  Gravity? _gravity;
+  bool? _gravityAnimationEnable;
+  Function? _animatedFunc;
 
   CustomDialog({
-    @required Widget child,
-    @required BuildContext context,
-    Duration duration,
-    Color barrierColor,
-    RouteTransitionsBuilder transitionsBuilder,
-    Gravity gravity,
-    bool gravityAnimationEnable,
-    Function animatedFunc,
-    bool barrierDismissible,
+    required Widget child,
+    required BuildContext? context,
+    Duration? duration,
+    Color? barrierColor,
+    RouteTransitionsBuilder? transitionsBuilder,
+    Gravity? gravity,
+    bool? gravityAnimationEnable,
+    Function? animatedFunc,
+    bool? barrierDismissible,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
@@ -463,12 +463,12 @@ class CustomDialog {
     }
 
     showGeneralDialog(
-      context: _context,
+      context: _context!,
       barrierColor: _barrierColor ?? Colors.black.withOpacity(.3),
       barrierDismissible: _barrierDismissible ?? true,
       barrierLabel: "",
       transitionDuration: _duration ?? Duration(milliseconds: 250),
-      transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions,
+      transitionBuilder: _transitionsBuilder ?? _buildMaterialDialogTransitions as Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?,
       pageBuilder: (BuildContext buildContext, Animation<double> animation,
           Animation<double> secondaryAnimation) {
         return Builder(
@@ -480,7 +480,7 @@ class CustomDialog {
     );
   }
 
-  Widget _buildMaterialDialogTransitions(
+  Widget? _buildMaterialDialogTransitions(
       BuildContext context,
       Animation<double> animation,
       Animation<double> secondaryAnimation,
@@ -526,11 +526,11 @@ class CustomDialog {
 
     //自定义动画
     if (_animatedFunc != null) {
-      return _animatedFunc(child, animation);
+      return _animatedFunc!(child, animation);
     }
 
     //不需要默认动画
-    if (!_gravityAnimationEnable) {
+    if (!_gravityAnimationEnable!) {
       custom = Tween<Offset>(
         begin: Offset(0.0, 0.0),
         end: Offset(0.0, 0.0),
@@ -570,13 +570,13 @@ class ListTileItem {
     this.fontFamily,
   });
 
-  EdgeInsets padding;
-  Widget leading;
-  String text;
-  Color color;
-  double fontSize;
-  FontWeight fontWeight;
-  String fontFamily;
+  EdgeInsets? padding;
+  Widget? leading;
+  String? text;
+  Color? color;
+  double? fontSize;
+  FontWeight? fontWeight;
+  String? fontFamily;
 }
 
 class RadioItem {
@@ -589,11 +589,11 @@ class RadioItem {
     this.onTap,
   });
 
-  EdgeInsets padding;
-  String text;
-  Color color;
-  double fontSize;
-  FontWeight fontWeight;
-  Function(int) onTap;
+  EdgeInsets? padding;
+  String? text;
+  Color? color;
+  double? fontSize;
+  FontWeight? fontWeight;
+  Function(int)? onTap;
 }
 //============================================================================

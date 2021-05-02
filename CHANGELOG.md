@@ -82,3 +82,6 @@
 ## 1.0.20
 
 * add a useRootNavigator property
+
+## 1.0.20-nullsafety
+* add null safety

@@ -1,11 +1,11 @@
 name: flutter_custom_dialog
 description: Semantic dialog | Made In YY.inc | Welcome to contribute
-version: 1.0.20
+version: 1.0.20-nullsafety
 author: AndroidHensen <xyj510402535@qq.com>
 homepage: https://github.com/YYFlutter/flutter-custom-dialog.git
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
