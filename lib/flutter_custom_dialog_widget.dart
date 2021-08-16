@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
@@ -50,7 +52,13 @@ class YYRadioListTileState extends State<YYRadioListTile> {
         return Material(
           color: widget.color,
           child: RadioListTile(
-            title: Text(widget.items[index].text),
+            title: Text(
+              widget.items[index].text,
+              style: TextStyle(
+                  fontSize: widget.items[index].fontSize,
+                  fontWeight: widget.items[index].fontWeight,
+                  color: widget.items[index].color),
+            ),
             value: index,
             groupValue: groupId,
             activeColor: widget.activeColor,
