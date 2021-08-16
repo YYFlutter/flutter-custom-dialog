@@ -1,11 +1,11 @@
 name: flutter_custom_dialog
 description: Semantic dialog | Made In YY.inc | Welcome to contribute
-version: 1.0.20
-author: AndroidHensen <xyj510402535@qq.com>
+version: 1.0.21
 homepage: https://github.com/YYFlutter/flutter-custom-dialog.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
+  flutter: ">=1.10.0"
 
 dependencies:
   flutter:
@@ -25,8 +25,12 @@ flutter:
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   plugin:
-    androidPackage: yy.inc.flutter_custom_dialog
-    pluginClass: FlutterCustomDialogPlugin
+    platforms:
+      android:
+        package: yy.inc.flutter_custom_dialog
+        pluginClass: FlutterCustomDialogPlugin
+      ios:
+        pluginClass: FlutterCustomDialogPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

@@ -74,7 +74,7 @@ showAlertDialog(BuildContext context) {
         ),
         Row(
           children: <Widget>[
-            makeTextButton("bottomsheet", () {
+            makeTextButton("bottom\nsheet", () {
               YYBottomSheetDialog();
             }),
             makeTextButton("progress", () {
@@ -203,6 +203,12 @@ showAlertDialog(BuildContext context) {
                 doubleButtonGravity: Gravity.center,
               );
             }),
+            makeTextButton("space\nEvenly", () {
+              YYAlertDialogWithGravity(
+                width: 250.0,
+                doubleButtonGravity: Gravity.spaceEvenly,
+              );
+            }),
           ],
         ),
         Text("5、dialog animation"),
@@ -239,7 +245,7 @@ showDevelopDialog(BuildContext context) {
         Text("1、debug"),
         Row(
           children: <Widget>[
-            makeTextButton("fix dismiss\nbug in v1.0.1", () {
+            makeTextButton("fix dismiss\nbug", () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -272,7 +278,7 @@ showDevelopDialog(BuildContext context) {
 
 Widget makeTextButton(title, Function() function) {
   return SizedBox(
-    width: 70.0,
+    width: 65.0,
     height: 35.0,
     child: RaisedButton(
       padding: EdgeInsets.all(0.0),

@@ -82,3 +82,7 @@
 ## 1.0.20
 
 * add a useRootNavigator property
+
+## 1.0.21
+
+* Add SpaceEvenly Gravity
