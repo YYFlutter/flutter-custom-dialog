@@ -102,12 +102,14 @@ class YYDialog {
     fontWeight1,
     fontFamily1,
     VoidCallback onTap1,
+    buttonPadding1 = const EdgeInsets.all(0.0),
     text2,
     color2,
     fontSize2,
     fontWeight2,
     fontFamily2,
     onTap2,
+    buttonPadding2 = const EdgeInsets.all(0.0),
   }) {
     return this.widget(
       SizedBox(
@@ -122,7 +124,7 @@ class YYDialog {
                   dismiss();
                 }
               },
-              padding: EdgeInsets.all(0.0),
+              padding: buttonPadding1,
               child: Text(
                 text1 ?? "",
                 style: TextStyle(
@@ -144,7 +146,7 @@ class YYDialog {
                   dismiss();
                 }
               },
-              padding: EdgeInsets.all(0.0),
+              padding: buttonPadding2,
               child: Text(
                 text2 ?? "",
                 style: TextStyle(
