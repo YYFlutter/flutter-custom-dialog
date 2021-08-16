@@ -7,17 +7,17 @@ export 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 class YYDialog {
   //================================弹窗属性======================================
   List<Widget> widgetList = []; //弹窗内部所有组件
-  static BuildContext _context; //弹窗上下文
-  BuildContext context; //弹窗上下文
+  static BuildContext? _context; //弹窗上下文
+  BuildContext? context; //弹窗上下文
 
-  double width; //弹窗宽度
-  double height; //弹窗高度
+  double? width; //弹窗宽度
+  double? height; //弹窗高度
   Duration duration = Duration(milliseconds: 250); //弹窗动画出现的时间
   Gravity gravity = Gravity.center; //弹窗出现的位置
   bool gravityAnimationEnable = false; //弹窗出现的位置带有的默认动画是否可用
   Color barrierColor = Colors.black.withOpacity(.3); //弹窗外的背景色
-  BoxConstraints constraints; //弹窗约束
-  Function(Widget child, Animation<double> animation) animatedFunc; //弹窗出现的动画
+  BoxConstraints? constraints; //弹窗约束
+  Function(Widget child, Animation<double> animation)? animatedFunc; //弹窗出现的动画
   bool barrierDismissible = true; //是否点击弹出外部消失
   EdgeInsets margin = EdgeInsets.all(0.0); //弹窗布局的外边距
 
@@ -26,12 +26,12 @@ class YYDialog {
   /// @params useRootNavigator=true，push是用的嵌套根布局的context
   bool useRootNavigator = true;
 
-  Decoration decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
+  Decoration? decoration; //弹窗内的装饰，与backgroundColor和borderRadius互斥
   Color backgroundColor = Colors.white; //弹窗内的背景色
   double borderRadius = 0.0; //弹窗圆角
 
-  Function() showCallBack; //展示的回调
-  Function() dismissCallBack; //消失的回调
+  Function()? showCallBack; //展示的回调
+  Function()? dismissCallBack; //消失的回调
 
   get isShowing => _isShowing; //当前 弹窗是否可见
   bool _isShowing = false;
@@ -41,7 +41,7 @@ class YYDialog {
     _context = ctx;
   }
 
-  YYDialog build([BuildContext ctx]) {
+  YYDialog build([BuildContext? ctx]) {
     if (ctx == null && _context != null) {
       this.context = _context;
       return this;
@@ -101,7 +101,7 @@ class YYDialog {
     fontSize1,
     fontWeight1,
     fontFamily1,
-    VoidCallback onTap1,
+    VoidCallback? onTap1,
     buttonPadding1 = const EdgeInsets.all(0.0),
     text2,
     color2,
@@ -164,10 +164,10 @@ class YYDialog {
   }
 
   YYDialog listViewOfListTile({
-    List<ListTileItem> items,
-    double height,
+    List<ListTileItem>? items,
+    double? height,
     isClickAutoDismiss = true,
-    Function(int) onClickItemListener,
+    Function(int)? onClickItemListener,
   }) {
     return this.widget(
       Container(
@@ -175,7 +175,7 @@ class YYDialog {
         child: ListView.builder(
           padding: EdgeInsets.all(0.0),
           shrinkWrap: true,
-          itemCount: items.length,
+          itemCount: items?.length ?? 0,
           itemBuilder: (BuildContext context, int index) {
             return Material(
               color: Colors.white,
@@ -189,15 +189,15 @@ class YYDialog {
                       dismiss();
                     }
                   },
-                  contentPadding: items[index].padding ?? EdgeInsets.all(0.0),
-                  leading: items[index].leading,
+                  contentPadding: items?[index].padding ?? EdgeInsets.all(0.0),
+                  leading: items?[index].leading,
                   title: Text(
-                    items[index].text ?? "",
+                    items?[index].text ?? "",
                     style: TextStyle(
-                      color: items[index].color ?? null,
-                      fontSize: items[index].fontSize ?? null,
-                      fontWeight: items[index].fontWeight,
-                      fontFamily: items[index].fontFamily,
+                      color: items?[index].color ?? null,
+                      fontSize: items?[index].fontSize ?? null,
+                      fontWeight: items?[index].fontWeight,
+                      fontFamily: items?[index].fontFamily,
                     ),
                   ),
                 ),
@@ -210,14 +210,14 @@ class YYDialog {
   }
 
   YYDialog listViewOfRadioButton({
-    List<RadioItem> items,
-    double height,
-    Color color,
-    Color activeColor,
-    int intialValue,
-    Function(int) onClickItemListener,
+    List<RadioItem>? items,
+    double? height,
+    Color? color,
+    Color? activeColor,
+    int? intialValue,
+    Function(int)? onClickItemListener,
   }) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context!).size;
     return this.widget(
       Container(
         height: height,
@@ -270,7 +270,7 @@ class YYDialog {
     CustomDialog(
       gravity: gravity,
       gravityAnimationEnable: gravityAnimationEnable,
-      context: this.context,
+      context: this.context!,
       barrierColor: barrierColor,
       animatedFunc: animatedFunc,
       barrierDismissible: barrierDismissible,
@@ -300,13 +300,9 @@ class YYDialog {
                   isShowingChange: (bool isShowingChange) {
                     // showing or dismiss Callback
                     if (isShowingChange) {
-                      if (showCallBack != null) {
-                        showCallBack();
-                      }
+                      showCallBack?.call();
                     } else {
-                      if (dismissCallBack != null) {
-                        dismissCallBack();
-                      }
+                      dismissCallBack?.call();
                     }
                     _isShowing = isShowingChange;
                   },
@@ -321,7 +317,7 @@ class YYDialog {
 
   void dismiss() {
     if (_isShowing) {
-      Navigator.of(context, rootNavigator: useRootNavigator).pop();
+      Navigator.of(context!, rootNavigator: useRootNavigator).pop();
     }
   }
 
@@ -403,7 +399,7 @@ class YYDialog {
 ///弹窗的内容作为可变组件
 class CustomDialogChildren extends StatefulWidget {
   final List<Widget> widgetList; //弹窗内部所有组件
-  final Function(bool) isShowingChange;
+  final Function(bool)? isShowingChange;
 
   CustomDialogChildren({this.widgetList = const [], this.isShowingChange});
 
@@ -414,7 +410,9 @@ class CustomDialogChildren extends StatefulWidget {
 class CustomDialogChildState extends State<CustomDialogChildren> {
   @override
   Widget build(BuildContext context) {
-    widget.isShowingChange(true);
+    if (widget.isShowingChange != null) {
+      widget.isShowingChange!(true);
+    }
     return Column(
       children: widget.widgetList,
     );
@@ -422,7 +420,9 @@ class CustomDialogChildState extends State<CustomDialogChildren> {
 
   @override
   void dispose() {
-    widget.isShowingChange(false);
+    if (widget.isShowingChange != null) {
+      widget.isShowingChange!(false);
+    }
     super.dispose();
   }
 }
@@ -431,24 +431,24 @@ class CustomDialogChildState extends State<CustomDialogChildren> {
 class CustomDialog {
   BuildContext _context;
   Widget _child;
-  Duration _duration;
-  Color _barrierColor;
-  RouteTransitionsBuilder _transitionsBuilder;
-  bool _barrierDismissible;
-  Gravity _gravity;
+  Duration? _duration;
+  Color? _barrierColor;
+  RouteTransitionsBuilder? _transitionsBuilder;
+  bool? _barrierDismissible;
+  Gravity? _gravity;
   bool _gravityAnimationEnable;
-  Function _animatedFunc;
+  Function? _animatedFunc;
 
   CustomDialog({
-    @required Widget child,
-    @required BuildContext context,
-    Duration duration,
-    Color barrierColor,
-    RouteTransitionsBuilder transitionsBuilder,
-    Gravity gravity,
-    bool gravityAnimationEnable,
-    Function animatedFunc,
-    bool barrierDismissible,
+    required Widget child,
+    required BuildContext context,
+    Duration? duration,
+    Color? barrierColor,
+    RouteTransitionsBuilder? transitionsBuilder,
+    Gravity? gravity,
+    bool gravityAnimationEnable = false,
+    Function? animatedFunc,
+    bool? barrierDismissible,
   })  : _child = child,
         _context = context,
         _gravity = gravity,
@@ -531,7 +531,7 @@ class CustomDialog {
 
     //自定义动画
     if (_animatedFunc != null) {
-      return _animatedFunc(child, animation);
+      return _animatedFunc!(child, animation);
     }
 
     //不需要默认动画
@@ -576,13 +576,13 @@ class ListTileItem {
     this.fontFamily,
   });
 
-  EdgeInsets padding;
-  Widget leading;
-  String text;
-  Color color;
-  double fontSize;
-  FontWeight fontWeight;
-  String fontFamily;
+  EdgeInsets? padding;
+  Widget? leading;
+  String? text;
+  Color? color;
+  double? fontSize;
+  FontWeight? fontWeight;
+  String? fontFamily;
 }
 
 class RadioItem {
@@ -595,11 +595,11 @@ class RadioItem {
     this.onTap,
   });
 
-  EdgeInsets padding;
-  String text;
-  Color color;
-  double fontSize;
-  FontWeight fontWeight;
-  Function(int) onTap;
+  EdgeInsets? padding;
+  String? text;
+  Color? color;
+  double? fontSize;
+  FontWeight? fontWeight;
+  Function(int)? onTap;
 }
 //============================================================================

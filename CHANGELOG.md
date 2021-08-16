@@ -86,3 +86,7 @@
 ## 1.0.21
 
 * Add SpaceEvenly Gravity
+
+## 1.1.0
+
+* Migrate to null safety
