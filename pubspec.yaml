@@ -2,6 +2,7 @@ name: flutter_custom_dialog
 description: Semantic dialog | Made In YY.inc | Welcome to contribute
 version: 1.0.21
 homepage: https://github.com/YYFlutter/flutter-custom-dialog.git
+publish_to: 'https://pub.dev'
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
