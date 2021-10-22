@@ -94,3 +94,7 @@
 ## 1.1.1
 
 * try to fix Android V2 embedding
+
+## 1.2
+
+* fix Android V2 embedding
