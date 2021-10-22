@@ -90,3 +90,7 @@
 ## 1.1.0
 
 * Migrate to null safety
+
+## 1.1.1
+
+* try to fix Android V2 embedding
