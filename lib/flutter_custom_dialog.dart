@@ -117,44 +117,48 @@ class YYDialog {
         child: Row(
           mainAxisAlignment: getRowMainAxisAlignment(gravity),
           children: <Widget>[
-            FlatButton(
+            TextButton(
               onPressed: () {
                 if (onTap1 != null) onTap1();
                 if (isClickAutoDismiss) {
                   dismiss();
                 }
               },
-              padding: buttonPadding1,
-              child: Text(
-                text1 ?? "",
-                style: TextStyle(
+              style: TextButton.styleFrom(
+                padding: buttonPadding1,
+                textStyle: TextStyle(
                   color: color1 ?? null,
                   fontSize: fontSize1 ?? null,
                   fontWeight: fontWeight1,
                   fontFamily: fontFamily1,
-                ),
+                )
+              ),
+              child: Text(
+                text1 ?? "",
               ),
             ),
             Visibility(
               visible: withDivider,
               child: VerticalDivider(),
             ),
-            FlatButton(
+            TextButton(
               onPressed: () {
                 if (onTap2 != null) onTap2();
                 if (isClickAutoDismiss) {
                   dismiss();
                 }
               },
-              padding: buttonPadding2,
+              style: TextButton.styleFrom(
+                padding: buttonPadding2,
+                textStyle: TextStyle(
+                color: color2 ?? Colors.black,
+                fontSize: fontSize2 ?? 14.0,
+                fontWeight: fontWeight2,
+                fontFamily: fontFamily2,
+                ),
+              ),
               child: Text(
                 text2 ?? "",
-                style: TextStyle(
-                  color: color2 ?? Colors.black,
-                  fontSize: fontSize2 ?? 14.0,
-                  fontWeight: fontWeight2,
-                  fontFamily: fontFamily2,
-                ),
               ),
             )
           ],
