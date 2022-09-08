@@ -22,17 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cd5033f-b00c-497c-981a-e7515066adb1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/yy/inc/flutter_custom_dialog/FlutterCustomDialogPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/yy/inc/flutter_custom_dialog/FlutterCustomDialogPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-    </list>
+    <list default="true" id="8cd5033f-b00c-497c-981a-e7515066adb1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +31,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[71e357bd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectId" id="1zoK36Pgj92azm2wGX13q2s15Qq" />
   <component name="ProjectViewState">
@@ -121,7 +112,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -136,61 +154,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="try to fix Android V2 embedding" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="103" key="CommitChangelistDialog2" timestamp="1634889153808">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1662602810227">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="103" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634889153808" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1634887376417">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1662602810227" />
+    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1662602812692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634887376417" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1634870532958">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634870532958" />
-    <state width="1877" height="326" key="GridCell.Tab.0.bottom" timestamp="1634891514056">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891514056" />
-    <state width="1877" height="326" key="GridCell.Tab.0.center" timestamp="1634891514055">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891514055" />
-    <state width="1877" height="326" key="GridCell.Tab.0.left" timestamp="1634891514055">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891514055" />
-    <state width="1877" height="326" key="GridCell.Tab.0.right" timestamp="1634891514056">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="326" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891514056" />
-    <state x="730" y="240" key="RollbackChangesDialog" timestamp="1634889573740">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="730" y="240" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634889573740" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634889160920">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634889160920" />
-    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634811656565">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634811656565" />
-    <state x="662" y="252" width="596" height="536" key="find.popup" timestamp="1634891434361">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="662" y="252" width="596" height="536" key="find.popup/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891434361" />
-    <state width="660" height="96" key="javadoc.popup.new" timestamp="1629114830468">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="660" height="96" key="javadoc.popup.new/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1629114830468" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1629114267041">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1629114267041" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1634891217327">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1634891217327" />
+    <state x="753" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1080.1880@0.0.1920.1040" timestamp="1662602812692" />
   </component>
 </project>
