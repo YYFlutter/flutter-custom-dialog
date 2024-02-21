@@ -1,12 +1,12 @@
 library flutter_custom_dialog;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
 import 'package:flutter_custom_dialog_example/dialog/alert_dialog.dart';
 import 'package:flutter_custom_dialog_example/dialog/bottom_sheet_dialog.dart';
 import 'package:flutter_custom_dialog_example/dialog/listview_dialog.dart';
-import 'package:flutter_custom_dialog_example/dialog/progress_dialog.dart';
 import 'package:flutter_custom_dialog_example/dialog/notice_dialog.dart';
-import 'package:flutter_custom_dialog/flutter_custom_dialog.dart';
+import 'package:flutter_custom_dialog_example/dialog/progress_dialog.dart';
 
 import 'dialog/develop_dialog.dart';
 
@@ -234,7 +234,7 @@ showAlertDialog(BuildContext context) {
 }
 
 showDevelopDialog(BuildContext context) {
-  YYDialog yyDialog;
+  YYDialog? yyDialog;
 
   return Padding(
     padding: EdgeInsets.all(8.0),
@@ -280,8 +280,7 @@ Widget makeTextButton(title, Function() function) {
   return SizedBox(
     width: 65.0,
     height: 35.0,
-    child: RaisedButton(
-      padding: EdgeInsets.all(0.0),
+    child: ElevatedButton(
       onPressed: () {
         function();
       },

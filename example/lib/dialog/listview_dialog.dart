@@ -131,7 +131,7 @@ YYDialog YYListViewDialogListTile() {
         items: listTileItems,
         onClickItemListener: (index) {
           var listTileItem = listTileItems[index];
-          print(listTileItem.text + " is on click");
+          print(listTileItem.text ?? '' + " is on click");
         })
     ..show();
 }
@@ -156,7 +156,7 @@ YYDialog YYListViewDialogListRadio() {
         activeColor: Colors.deepPurpleAccent,
         onClickItemListener: (index) {
           var radioItem = radioItems[index];
-          print(radioItem.text + " is on click");
+          print(radioItem.text ?? '' + " is on click");
         })
     ..divider()
     ..doubleButton(
